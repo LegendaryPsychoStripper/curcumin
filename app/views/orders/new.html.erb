@@ -141,7 +141,7 @@ if (parseFloat(document.getElementById('totalfinal').innerHTML) == transport)
   </div>
 
 
-     <div class="modal" id="modal_menu">
+     <div class="modal" id="modal_menu" style="background: rgba(0, 0, 0, 0.95);">
     <div class="longcontent tc-grey-light" style="background-color: transparent;">
         <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_menu');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         
@@ -241,7 +241,7 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
   </div>
 
 
-<div class="modal" id="modal_login"><!--render de sign in-->
+<div class="modal" id="modal_login" style="background: rgba(0, 0, 0, 0.95);"><!--render de sign in-->
     <div class="longcontent tc-grey-light" style="background-color: transparent;">
         <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_login');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         
@@ -259,7 +259,7 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
     </div>
   </div>
 
-  <div class="modal" id="modal_edit"><!--render de sign in-->
+  <div class="modal" id="modal_edit" style="background: rgba(0, 0, 0, 0.95);"><!--render de sign in-->
     <div class="longcontent tc-grey-light" style="background-color: transparent;">
         <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_edit');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         
@@ -283,7 +283,15 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
       <img src="<%=request.base_url %>/assets/icons/1492628996_menu.png" class="translucent link-focus" style="height: 30px; margin:5px; position: relative; padding: 0; float: left;" onClick="show_modal('modal_menu')">
       <img src="<%=request.base_url %>/assets/icons/1492629013_mail.png" class="translucent link-focus" style="height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" >
       <img src="<%=request.base_url %>/assets/icons/1492629028_cart.png" class="translucent link-focus" style="height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" >
-      <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" >
+      
+      <% if user_signed_in? %>
+            <a class="float-right">
+              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_edit')"><p style="color:green; font-size:0.8em;">on-line</p></a>
+              <%else%>
+            <a class="float-right">
+              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_login')">
+            </a>
+      <% end %>
     </div>
     
   <div id="section_ten" class="section_full tc-blue shadow-bottom" style="background-color: whitesmoke;">
