@@ -1,0 +1,69 @@
+<!--
+
+<input type='text', placeholder="Email" name='email' class='chatinput' id='chatinput1'>
+
+<input type='password', placeholder="Parola" name='password' class='chatinput' id='chatinput2'>
+(6 caractere minimum)
+-->
+<div id="cont" style="display: inline;">
+<h1 class="align-left capital">Intra in cont</h1><!--sign in-->
+
+<%= render file:'devise/sessions/new'%>
+
+<a class='tc-white float-right' onclick="show_parola()">Parolă uitată?</a><br />
+<a class='slim-button2 round' onclick="show_newcont()">Nu ai cont? Creeaza-ti cont!</a>
+</div>
+
+
+<div id="newcont" style="display: none;">
+<h1 class="capital align-left">Creeaza-ti cont</h1><!--inregistrare-->
+
+<%= render file:'devise/registrations/new'%>
+<a class='slim-button2 round' onclick="show_cont()">Ai cont? Intra in cont!</a>
+</div>
+
+<div id="parola?" style="display: none;">
+<h1 class="capital align-left">Parola uitata?</h1>
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+
+
+<%= render file:'devise/passwords/new'%><br/>
+
+<% end -%>
+<a class='slim-button2 round' onclick="show_cont()">Ti-ai adus aminte? Intra in cont!</a>
+</div>
+<script>
+/*
+function dubluform(){
+var inputBox1 = document.getElementById('chatinput1');
+var inputBox2 = document.getElementById('chatinput2');
+document.getElementById('printchatbox1').value = inputBox1.value;
+document.getElementById('printchatbox2').value = inputBox1.value;
+
+document.getElementById('printchatbox3').value = inputBox2.value;
+document.getElementById('printchatbox4').value = inputBox2.value;
+}
+*/
+function show_newcont(){
+
+document.getElementById("newcont").style.display = "inline";
+document.getElementById("cont").style.display = "none";
+
+}
+
+function show_cont(){
+
+document.getElementById("cont").style.display = "inline";
+document.getElementById("newcont").style.display = "none";
+document.getElementById("parola?").style.display = "none";
+}
+
+function show_parola(){
+
+document.getElementById("cont").style.display = "none";
+//document.getElementById("newcont").style.display = "none";
+document.getElementById("parola?").style.display = "inline";
+
+}
+
+</script>

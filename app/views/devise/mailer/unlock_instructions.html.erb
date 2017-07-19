@@ -1,0 +1,7 @@
+<p>Salut <%= @resource.email %>!</p>
+
+<p>Contul tau a fost blocat din cauza unui numar excesiv de incercari.</p>
+
+<p>Da click mai jos ca sa-ti deblochezi contul:</p>
+
+<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>

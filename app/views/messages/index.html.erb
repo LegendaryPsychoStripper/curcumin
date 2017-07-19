@@ -1,0 +1,22 @@
+<title> Control pareri clienti </title>
+<%= render file: 'layouts/header'%>
+
+    
+
+	<% Message.where(tip: 'parere').each do |mesaj| %>
+		
+		
+			<% if user_signed_in? && current_user.tip =='admin' %>
+				<p>Nume: <%=mesaj.nume%><br/>
+				Email: <%=mesaj.email%><br/>
+				Continut: <%=mesaj.content%><br/>
+			<%= link_to 'Validare', message_path(mesaj), method: :put %>: <%= mesaj.is_validated%>
+			<%= link_to 'Sterge', message_path(mesaj), method: :delete %></p><br/><br/>
+			<%elsif mesaj.is_validated == 'true' %>
+				<p><%=mesaj.content%></p>
+			<%end%>
+			
+	<% end %>
+
+
+<%= render file: 'layouts/footer'%>

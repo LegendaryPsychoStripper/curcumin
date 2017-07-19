@@ -1,0 +1,761 @@
+
+
+
+/*(mdpi) Android*/
+
+
+/*(hdpi) Android*/
+@media only screen and (-webkit-device-pixel-ratio:1.5){
+
+  /*CSS  */
+#section_two p{
+		font-size: 0.7em !important;
+	}
+	
+	#section_two h1{
+		font-size: 0.7em ;
+	}
+	
+	#section_four h1{
+		font-size: 2em;
+	}
+	#section_four h2{
+		font-size: 1em !important;
+	}
+	#section_four a{
+		font-size: 1em !important;
+	}
+	
+	
+	
+	#section_three p{
+		font-size: 1em !important;
+		
+		
+	}
+	#section_three p {
+		max-width: 90vw !important;
+		width: 90vw !important;
+	}
+	
+	
+	#section_five h1,h2{
+		font-size: 1.5em !important;
+	}
+	#section_five p{
+		font-size: 1em !important;
+	}
+	
+	
+	#section_six h1{
+		font-size: 1.5em !important;
+		
+		#section_six h2{
+			font-size: 1.5em !important;
+		}
+	}
+	#section_six p{
+		font-size: 1em !important;
+	}
+	
+	#section_seven h1{
+		font-size: 1.5em !important;
+	}
+	
+	#section_seven h2{
+			font-size: 1.5em !important;
+		}
+	
+	#section_seven a{
+		font-size: 1.5em !important;
+	}
+	
+	#section_seven .slim-button{
+		font-size: 1.5em !important;
+		padding-left: 0.5px !important;
+		padding-right: 0.5px !important;
+		padding-top: 0.5px !important;
+		padding-bottom: 0.5px !important;
+		line-height: 1.5em;
+	
+} 
+	#section_eight h1{
+		
+		font-size: 1.5em !important;
+		
+	}
+	
+	#section_eight h2{
+		font-size: 1.5em !important;
+	}
+	#section_eight a{
+		font-size: 1.5em !important;
+	}
+	#section_eight p{
+	 font-size: 1em !important;
+	}
+	
+	
+	#section_nine h1{
+		
+		font-size: 1.5em !important;
+	}
+	#section_nine h3{
+		font-size: 1em !important;
+	}
+	
+	
+	
+	
+	
+	}
+	
+	 
+	
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+/* ----------- Galaxy S4 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+	  #section_three h3{
+		font-size: 1.7em;
+		
+	}
+	
+	
+	#section_seven h2{
+		font-size: 2.5em ;
+	}
+	#section_seven h1{
+		font-size: 2.7em ;
+	}
+	#section_seven p{
+		font-size: 2em;
+	}
+	#section_ten h1{
+		
+		font-size: 2em !important;
+	}
+	#section_ten h2{
+		font-size: 2.2em !important;
+	}
+	#section_ten .slim-button{
+		padding-left: 3px !important;
+		padding-right: 3px !important;
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+		
+	}
+	
+	#section_seven .slim-button{
+		font-size: 2em !important;
+		padding-left: 0.5px !important;
+		padding-right: 0.5px !important;
+		padding-top: 0.5px !important;
+		padding-bottom: 0.5px !important;
+		line-height: 1.5em;
+		
+	 	
+		
+	}
+	  
+	 
+	.square-full .slim-button{
+		font-size: 1.2em !important;
+		padding-left: 7px;
+		padding-right: 7px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		
+		display: inline-block !important;
+	}
+}
+
+/* Portrait */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+
+	  #section_three h3{
+		font-size: 1.7em;
+		
+	}
+	  
+	
+	
+	#section_seven h2{
+		font-size: 2.5em ;
+	}
+	#section_seven h1{
+		font-size: 2.7em ;
+	}
+	#section_seven p{
+		font-size: 2em;
+	}
+	#section_ten h1{
+		
+		font-size: 2em ;
+	}
+	  
+	  
+	#section_ten h2{
+		font-size: 2.2em ;
+	}
+	#section_ten .slim-button{
+		padding-left: 3px !important;
+		padding-right: 3px !important;
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+		
+	}
+	
+	#section_seven .slim-button{
+		font-size: 2em !important;
+		padding-left: 0.5px !important;
+		padding-right: 0.5px !important;
+		padding-top: 0.5px !important;
+		padding-bottom: 0.5px !important;
+		line-height: 1.5em;
+		
+	 	
+		
+	}
+	.square-full .slim-button{
+		font-size: 1.2em !important;
+		padding-left: 7px;
+		padding-right: 7px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		
+		display: inline-block !important;
+	}
+}
+
+/* Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+
+	  #section_three h3{
+		font-size: 1.7em;
+		
+	}
+	
+	
+	#section_seven h2{
+		font-size: 2.5em ;
+	}
+	#section_seven h1{
+		font-size: 2.7em ;
+	}
+	#section_seven p{
+		font-size: 2em;
+	}
+	#section_ten h1{
+		
+		font-size: 2em !important;
+	}
+	#section_ten h2{
+		font-size: 2.2em ;
+	}
+	#section_ten .slim-button{
+		padding-left: 3px !important;
+		padding-right: 3px !important;
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+		
+	}
+	  
+	  
+	   
+	
+	#section_seven .slim-button{
+		font-size: 2em !important;
+		padding-left: 0.5px !important;
+		padding-right: 0.5px !important;
+		padding-top: 0.5px !important;
+		padding-bottom: 0.5px !important;
+		line-height: 1.5em;
+		
+	 	
+		
+	}
+	.square-full .slim-button{
+		font-size: 1.2em !important;
+		padding-left: 7px;
+		padding-right: 7px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		
+		display: inline-block !important;
+	}
+}
+
+/* ----------- Galaxy S5 -----valabil si pentru iphone 6!!!!------ */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+	  #section_three h3{
+		font-size: 1.7em;
+		
+	}
+	
+	
+	#section_seven h2{
+		font-size: 2.5em ;
+	}
+	#section_seven h1{
+		font-size: 2.7em ;
+	}
+	#section_seven p{
+		font-size: 2em;
+	}
+	#section_ten h1{
+		
+		font-size: 2em !important;
+	}
+	#section_ten h2{
+		font-size: 2.2em !important;
+	}
+	#section_ten .slim-button{
+		padding-left: 3px !important;
+		padding-right: 3px !important;
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+		
+	}
+	
+	#section_seven .slim-button{
+		font-size: 2em !important;
+		padding-left: 0.5px !important;
+		padding-right: 0.5px !important;
+		padding-top: 0.5px !important;
+		padding-bottom: 0.5px !important;
+		line-height: 1.5em;
+		
+	 	
+		
+	}
+	.square-full .slim-button{
+		font-size: 1.2em !important;
+		padding-left: 7px;
+		padding-right: 7px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		
+		display: inline-block !important;
+	}
+}
+
+/* Portrait--------- */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+
+	 
+}
+
+@media only screen 
+	and (max-device-width: 768px)
+	and (orientation: landscape) 
+{
+
+
+	   
+	#section_three .fullheight{
+		
+		min-height: 150vh;
+		
+	}
+		   #section_three #flacon-right{
+		  
+		    min-height: 150vh;
+			max-width: 60vw;
+			  
+		  }
+	   
+	 .slim-no-contour.node
+		   				{
+			 min-height: 30vh;
+						 }
+		   
+		   	#section_three h3{
+			   font-size: 2.5em !important;
+		                    }
+		   		#section_three p{
+			  	 font-size: 2.5em !important;
+		        		    }
+	
+	
+		
+	
+		   			
+		 
+	  #section_three #flacon-left{
+		  
+		    min-height: 150vh;
+			max-width: 60vw;
+			  
+		  }
+	
+}
+
+
+@media only screen
+	and (max-width: 1000px)
+   {
+
+	   
+	   .longcontent {
+    margin: 2% 2%;
+    text-align:center;
+    background: green;
+	padding: 15px;
+}
+.modal {
+	
+    position: fixed;
+	padding: 0 !important;
+	margin: 0 !important;
+   
+    top: 0; right: 0; bottom: 0; left: 0;
+    	
+    
+    background: rgba(0, 0, 0, 0.9);
+	display: none;
+	z-index: 5000;
+	
+}
+
+.modal  {
+    background: White;
+    margin: 10% 2%;
+}
+
+}
+
+
+@media only screen
+	and (max-device-width: 768px)
+   {
+	   
+	   #section_nine a{
+		   font-size: 0.8em;
+	   }
+	   
+	   #modal_menu .longcontent {
+    margin: 5px 5px;
+    text-align:center;
+    background: green;
+	padding: 20px;
+	
+
+}
+	   #modal_medic  .longcontent {
+    margin: 5px 5px;
+    text-align:center;
+    background: green;
+	padding: 15px;
+	
+
+}
+	 
+	   
+	   
+	   #modal_login .longcontent {
+    margin: 5px 5px;
+    text-align:center;
+    background: green;
+	padding: 15px;
+	
+
+}
+	   
+	   
+	   
+	   
+	 
+	   #section_one {
+		   background:url("http://localhost:3000/assets/antioxidant_antiinflamator_curcumin95_bioperine_sm.jpg") no-repeat center top fixed ; 
+		   -webkit-background-size: cover;
+  			-moz-background-size: cover;
+  			-o-background-size: cover;
+  			background-size: cover;
+ 			 
+	   }
+	   
+	  
+  .container-half, .max600 
+	   {
+		   width: 90% ;
+		   max-width: none;
+		   
+	   }
+	   
+	   
+	   #section_six h1{
+		   font-size: 2.7em;
+	   }
+	   
+		   
+	#section_ten{
+
+		   }
+	   
+	   
+	   
+	                          /*COMANDA portocaliu*/
+	   #section_seven{
+	background-image: none; 
+		   background-color: #bf634c;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+	background-position: top left;
+}
+	   
+	   
+	   #section_four{
+		   background-image: none; 
+		   background-color: #01241e;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover 
+	background-position: top left;
+	   }
+	   
+	                                        /* anaaa!! negru */
+	   #section_eight{
+		   
+		   background-image: none !important; 
+		   background-color: #000 !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+	background-position: top left;
+		   
+		   
+	   }
+	   
+	   
+	   .responsive-background{
+		display: inline-block;
+	}
+	
+	   
+	   
+	   #section_nine h1{
+		   font-size: 2.4em;
+		   
+	   }
+	   
+	   #section_three a{
+		   font-size:  1.5em;
+	   }
+	  
+	                            /* stiinta */
+	   
+	   #section_three{
+		   
+		    background-image: none;  
+		   background-color: #010006;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+	background-position: top left;
+		   
+	   }
+	   
+	   
+	   
+		#section_three h3{
+		font-size: 1.7em;
+		
+	}
+	   #section_three h1{
+		   font-size: 2.3em !important;
+		   
+	   }
+	
+	   
+	   #section_five h1{
+		   font-size: 2.5em;
+	   }
+	   #section_five h2{
+		   font-size: 2.5em;
+	   }
+	   
+	   #section_two h3{
+		   font-size: 1.2em !important;
+	   }
+	
+	#section_seven h2{
+		font-size: 2.5em ;
+	}
+	#section_seven h1{
+		font-size: 2.7em ;
+	}
+	#section_seven p{
+		font-size: 2em;
+	}
+	#section_ten h1{
+		
+		font-size: 2em !important;
+	}
+	#section_ten h2{
+		font-size: 2.2em !important;
+	}
+	#section_ten .slim-button{
+		padding-left: 3px !important;
+		padding-right: 3px !important;
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+		
+	}
+	   
+	   
+	  
+	
+	#section_seven .slim-button{
+		font-size: 2em ;
+		padding-left: 0.5px !important;
+		padding-right: 0.5px !important;
+		padding-top: 0.5px !important;
+		padding-bottom: 0.5px !important;
+		line-height: 1.5em;
+		
+	 	
+		
+	}
+	.square-full .slim-button{
+		font-size: 1.2em !important;
+		padding-left: 7px;
+		padding-right: 7px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		
+		display: inline-block !important;
+	}
+		
+		
+}
+	
+
+
+
+
+
+/* Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+
+	  #section_three h3{
+		font-size: 1.7em;
+		
+	}
+	
+	
+	#section_seven h2{
+		font-size: 2.5em;
+	}
+	#section_seven h1{
+		font-size: 2.7em ;
+	}
+	#section_seven p{
+		font-size: 2em;
+	}
+	#section_ten h1{
+		
+		font-size: 2em !important;
+	}
+	#section_ten h2{
+		font-size: 2.2em !important;
+	}
+	#section_ten .slim-button{
+		padding-left: 3px !important;
+		padding-right: 3px !important;
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+		
+	}
+	
+	#section_seven .slim-button{
+		font-size: 2em ;
+		padding-left: 0.5px !important;
+		padding-right: 0.5px !important;
+		padding-top: 0.5px !important;
+		padding-bottom: 0.5px !important;
+		line-height: 1.5em;
+		
+	 	
+		
+	}
+	.square-full .slim-button{
+		font-size: 1.2em !important;
+		padding-left: 7px;
+		padding-right: 7px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		
+		display: inline-block !important;
+	}
+	  /*okk*/
+	  
+	  #section_four{
+		   background-image: none; 
+		   background-color: #01241E;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain; 
+	background-position: top left;
+	   }
+	  
+	  
+	  
+	  
+	  
+	  
+}

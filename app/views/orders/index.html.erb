@@ -1,0 +1,32 @@
+<title>Comenzi</title>
+
+<%= render file: 'layouts/header'%>
+<!--
+<%= form_tag(orders_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Cauta" %>
+<%= submit_tag "Cautare" %>
+<% end %>
+<% if @orders.present? %>
+  <%= render @orders %>
+<% else %>
+  <p>Nu exista comenzi care contin termenul <%= params[:search] %>.</p>
+<% end %>
+-->
+<% @orders.each do |order| %>
+<%=order.nume%> <%=order.prenume%> din <%=order.oras%> a comandat pe <%= order.created_at.strftime("%d.%m.%y la %H:%M") %> in valoare de <%= order.pret %> LEI
+
+<%if current_user.tip =='admin'%>
+<%= link_to 'Editeaza comanda', edit_order_path(order) %>
+
+<% if order.updated_at != order.created_at %>
+Modificata pe <%= order.updated_at.strftime("%d.%m.%y la %H:%M") %>
+<%end%>
+
+<%= link_to 'Sterge comanda', order_path(order), method: :delete, data: {confirm: "Esti sigur ca vrei sa stergi comanda?"} %> 
+<%end%>
+
+<%= link_to 'Factura', order_path(order), target: '_blank' %>
+<br>
+<%end%>
+
+<%= render file: 'layouts/footer'%>

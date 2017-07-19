@@ -1,0 +1,7 @@
+<%= form_for Message.new, as: :message, url: messages_path do |f| %>
+		
+<%= render partial: 'messages/form', locals: {f: f, tip: tip}%>
+
+<%= f.submit 'Trimite', style: "margin-left: 0.5%; width:49.5%; background-color: whitesmoke; color: #6083A3; border:1px solid #6083A3; padding: 5px;" %>
+
+<% end %>

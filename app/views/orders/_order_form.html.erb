@@ -1,0 +1,161 @@
+<% if @order.errors.any? %>
+
+    <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+<% end %>
+<% end %>
+
+
+<%if user_signed_in? && @order.new_record? %>
+<%= f.hidden_field :user_id, :value => current_user.id%>
+
+<% if current_page?(new_order_path) %>
+
+<div style="display: none;">
+<% @products.each do |produs| %>
+  <%= produs.nume%>
+  <%= f.fields_for :order_products do |g| %>
+  <%= g.number_field :numar, in: 0..100 %>
+  <%= g.hidden_field :product_id, :value => produs.id%>
+  <%end%>
+<%end%>
+
+</div>
+<%else%>
+
+<% @products.each do |produs| %>
+  <%= produs.nume%> (stoc:<%=produs.stoc%>)
+  <%= f.fields_for :order_products do |g| %>
+  <%= g.number_field :numar, in: 0..100 %>
+  <%= g.hidden_field :product_id, :value => produs.id%>
+  <%end%>
+<%end%>
+
+<%end%>
+  
+  <%= f.text_field :nume, placeholder: "Nume", :value => current_user.nume, id: "name", onchange: "name_validation()" %>
+
+  
+  <%= f.text_field :prenume,  placeholder: "Prenume", :value => current_user.prenume, id: "prenume", onchange: "prenume_validation()", onfocus: "check_if_empty_nume()" %>
+  
+  
+  <%= f.text_field :email,  placeholder: "Email", :value => current_user.email, id: "email", onchange: "validation_email()", onfocus: "check_if_empty_prenume()" %><div id= 'email_valid' class="float-left" style='color:red;'></div>
+  
+  
+  <%= f.text_field :telefon,  placeholder: "Telefon", :value => current_user.telefon, id: "phone", onchange: "phone_validation()", onfocus: "check_if_empty_email()" %><div id= 'phone_valid' class="float-left" style='color:red;'></div>
+  
+  
+  <%= f.text_field :tara,  placeholder: "Tara", :value => current_user.tara, id: "tara", onchange: "tara_validation()", onfocus: "check_if_empty_phone()" %>
+  
+ 
+  <%= f.text_field :judet,  placeholder: "Judet", :value => current_user.judet, id: "judet", onfocus: "check_if_empty_tara()" %>
+  
+  
+  <%= f.text_field :oras,  placeholder: "Oras", :value => current_user.oras, id: "oras", onchange: "oras_validation()", onfocus: "check_if_empty_tara()" %>
+  
+  
+  <%= f.text_field :codpostal,  placeholder: "Codpostal", :value => current_user.codpostal, id: "codpostal", onfocus: "check_if_empty_oras()"%>
+  
+  <div class="space"></div>
+  <%= f.text_area :adresa,  placeholder: "Adresa", :value => current_user.adresa, id: "adresa",rows: 4 , onchange: "adresa_validation()", onfocus: "check_if_empty_oras()" %>
+  <div class="space"></div>
+  <%= f.text_area :mesaj,  placeholder: "Mesaj", id: "mesaj", rows: 4, onchange: "mesaj_validation()", onfocus: "check_if_empty_adresa()"%>
+  
+<%else%>
+<%if @order.new_record? %>
+  
+
+
+  <% if current_page?(new_order_path) %>
+
+  <div style="display: none;">
+    <% @products.each do |produs| %>
+    <%= produs.nume%>
+    <%= f.fields_for :order_products do |g| %>
+    <%= g.number_field :numar, in: 0..100 %>
+    <%= g.hidden_field :product_id, :value => produs.id%>
+    <%end%>
+  <%end%>
+  </div>
+
+  <%else%>
+
+    <% @products.each do |produs| %>
+    <%= produs.nume%> (stoc:<%=produs.stoc%>)
+    <%= f.fields_for :order_products do |g| %>
+    <%= g.number_field :numar, in: 0..100 %>
+    <%= g.hidden_field :product_id, :value => produs.id%>
+    <%end%>
+  <%end%>
+
+<%end%>
+
+
+
+
+
+<%else%>
+
+
+
+
+  <% if current_page?(new_order_path) %>
+
+  <div style="display: none;">
+    <% @products.each do |produs| %>
+    <%= produs.nume%>
+    <%= f.fields_for :order_products, @order_products.where(product_id: produs.id) do |g| %>
+    <%= g.number_field :numar, in: 0..100 %>
+    <%= g.hidden_field :product_id, :value => produs.id%>
+    <%end%>
+  <%end%>
+  </div>
+<%else%>
+
+  <% @products.each do |produs| %>
+    <%= produs.nume%> (stoc:<%=produs.stoc%>)
+    <%= f.fields_for :order_products, @order_products.where(product_id: produs.id) do |g| %>
+    <%= g.number_field :numar, in: 0..100 %>
+    <%= g.hidden_field :product_id, :value => produs.id%>
+    <%end%>
+  <%end%>
+
+<%end%>
+
+
+
+<%end%>
+  
+  <%= f.text_field :nume, placeholder: "Nume", id: "name", onchange: "name_validation()" %>
+  
+  
+  <%= f.text_field :prenume, placeholder: 'Prenume', id: "prenume", onchange: "prenume_validation()", onfocus: "check_if_empty_nume()" %>
+  
+  
+  <%= f.text_field :email, placeholder: 'Email', id: "email", onchange: "validation_email()", onfocus: "check_if_empty_prenume()" %><div id= 'email_valid' style='color:red;'></div>
+  
+  
+  <%= f.text_field :telefon, placeholder: 'Telefon', id: "phone", onchange: "phone_validation()", onfocus: "check_if_empty_email()" %><div id= 'phone_valid' style='color:red;'></div>
+  
+  
+  <%= f.text_field :tara, placeholder: 'Tara', id: "tara", onchange: "tara_validation()", onfocus: "check_if_empty_phone()" %>
+  
+  
+  <%= f.text_field :judet, placeholder: 'Judet', id: "judet",  onfocus: "check_if_empty_tara()" %>
+  
+  
+  <%= f.text_field :oras, placeholder: 'Oras', id: "oras", onchange: "oras_validation()", onfocus: "check_if_empty_tara()" %>
+  
+  
+  <%= f.text_field :codpostal, placeholder: 'Codpostal', id: "codpostal", onfocus: "check_if_empty_oras()" %>
+  
+  <div class="space"></div>
+  <%= f.text_area :adresa, placeholder: 'Adresa', id: "adresa",rows: 4 , onchange: "adresa_validation()", onfocus: "check_if_empty_oras()" %>
+<div class="space"></div>
+  <%= f.text_area :mesaj, placeholder: 'Mesaj',rows: 4 , id: "mesaj", onchange: "mesaj_validation()", onfocus: "check_if_empty_adresa()" %>
+
+<%end%>
+
+
+
+

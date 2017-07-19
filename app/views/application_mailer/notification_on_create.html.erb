@@ -1,0 +1,20 @@
+<p>Salut <%= @order.prenume %>!</p>
+
+<p>Multumim pentru comanda efectuata!</p>
+<!--
+<p>
+<% Product.all.each do |produs| %>
+<%if OrderProduct.find_by(product_id: produs.id, order_id: @order.id) != nil && OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar != 0%>
+<%= produs.nume%> x <%= OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar%><br/>
+<% if @order.transport == "true"%>
+	Transport: 15 LEI<br/>
+	<%else%>
+	Transport: 0 LEI<br/>
+<%end%>
+
+<%end%>
+<%end%>
+Total: <%=@order.pret %> LEI
+</p>
+-->
+<%= render file: 'orders/show'%>

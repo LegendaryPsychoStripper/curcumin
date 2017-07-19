@@ -1,0 +1,18 @@
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    
+    <%= f.email_field :email, placeholder: "Email", style: "border-color: white;" %>
+  </div>
+<center>
+  <div class="actions">
+  <br/>
+    <%= f.submit "Trimite-mi instructiunile de resetare", class: 'submit-button round' %>
+
+  </div>
+  </center>
+<% end %>
+
+	

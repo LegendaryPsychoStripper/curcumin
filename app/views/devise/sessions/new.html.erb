@@ -1,0 +1,41 @@
+
+<title>Intra in cont!</title> 
+
+
+<!--<% if !current_page?(new_user_session_path) %>-->
+
+
+<!--<div style="display: none;">-->
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    
+    <%= f.email_field :email, placeholder: 'Email', style: "border-color: white;", id: 'printchatbox2' %>
+  </div>
+
+  <div class="field">
+    
+    <%= f.password_field :password, placeholder: 'Parola', style: "border-color: white;", autocomplete: "off", id: 'printchatbox4' %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> caractere minimum)</em>
+    <% end %>
+  </div>
+<!--</div>-->
+<center>
+<div class="actions">
+    <br/>
+      <%= f.submit "Intra in cont", class: 'submit-button round'%>
+    
+    <br/>
+  </div>
+</center>
+  <%end%>
+
+<!--
+<%= link_to 'Acasa', root_path %><br/>
+
+<%end%>
+-->
+

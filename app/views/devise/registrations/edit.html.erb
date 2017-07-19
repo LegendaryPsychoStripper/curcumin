@@ -1,0 +1,39 @@
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= devise_error_messages! %> 
+
+  <div class="field">
+    <%= f.email_field :email, value: current_user.email, autofocus: true, class: "form-control", type: 'hidden' %>
+  </div>
+  
+<!--
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Așteptând confirmare<%= resource.unconfirmed_email %></div>
+  <% end %>
+
+-->
+  <div class="field">
+   
+    <%= f.password_field :password, placeholder: "Noua parola", style: "border-color: white;", autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    
+    <%= f.password_field :password_confirmation, placeholder: "Confirmare parola noua", style: "border-color: white;",autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    
+    <%= f.password_field :current_password, placeholder: "Introduceti parola actuala", style: "border-color: white;",autocomplete: "off" %>
+  </div><br/>
+<center>
+  <div class="actions">
+    
+      <%= f.submit "Schimba parola", class: 'submit-button round', style: "font-size:1em;" %>
+    
+  </div>
+  </center>
+
+<% end %>
+
+

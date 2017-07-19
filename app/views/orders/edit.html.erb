@@ -1,0 +1,12 @@
+
+<title>Editare comanda <%=@order.id%></title>
+
+<%= render file: 'layouts/header'%>
+
+
+<%= form_for @order do |f| %>
+<%= render partial: 'order_form', locals: {f: f} %>
+<%= f.submit data: {confirm: "Esti sigur ca vrei schimbi comanda?"}%>
+<%end%>
+
+<%= render file: 'layouts/footer'%>

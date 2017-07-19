@@ -1,0 +1,74 @@
+<head>
+<%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<%= stylesheet_link_tag 'queries_iphone', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'queries_samsung', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'queries_tablet', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<%= javascript_include_tag 'modalJss', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'cssmodal', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'desktopcss', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<div id="section_ten" class="section_full tc-blue shadow-bottom" style="background-color: whitesmoke; ">
+      <div id="menu_desktop" class="shadow-bottom"  style="background-color: whitesmoke;">
+        
+            <a class="float-left link-focus-blue" style="margin-top: 10px; margin-left: 20px; display: inline-block;" href="<%=request.base_url%>" >
+              Acasa
+            </a>
+            <% if user_signed_in? && current_user.tip == "admin" && !current_page?(orders_path)  %>
+            <a class="float-left link-focus-blue" style="margin-top: 10px; margin-left: 20px; display: inline-block;" href="<%=request.base_url%>/orders" >
+              Vizualizeaza comenzi
+            </a>
+            <% end %>
+            <a class="float-right" href="<%=request.base_url %>/orders/new">
+              <img src="<%=request.base_url %>/assets/icons/1492629028_cart.png" class="icon translucent contained position-v-middle">
+            </a>
+           <% if user_signed_in? %>
+            <a class="float-right">
+              <img src="<%=request.base_url%>/assets/icons/1492812098_avatar.png" class="icon translucent contained position-v-middle" onClick="show_modal('modal_edit')"><p style="color:green; font-size:0.8em;">on-line</p></a>
+              <%else%>
+            <a class="float-right">
+              <img src="<%=request.base_url%>/assets/icons/1492812098_avatar.png" class="icon translucent contained position-v-middle" onClick="show_modal('modal_login')">
+            </a>
+            <% end %>
+      </div>
+</div>
+
+<div class="modal" id="modal_login"><!--render de sign in-->
+    <div class="longcontent tc-grey-light" style="background-color: transparent;">
+        <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_login');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
+        
+        <div class="container-responsive max600">
+            
+          <!--<input type="email" name="email" class="bd-grey-light" placeholder="Email"/>
+          <input type="password" name="password"  class="bd-grey-light" placeholder="Parola"/>
+          <br><br><br>
+          <a class="slim-button float-left">Intra in cont</a><div class="space float-left"></div><a class="slim-button float-left">Fa-mi cont!</a>-->
+          <%= render partial: 'users/index'%>
+        </div>
+        <p></p>
+       
+        
+    </div>
+  </div>
+
+  <div class="modal" id="modal_edit"><!--render de sign in-->
+    <div class="longcontent tc-grey-light" style="background-color: transparent;">
+        <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_edit');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
+        
+        <div class="container-responsive max600">
+            
+          <!--<input type="email" name="email" class="bd-grey-light" placeholder="Email"/>
+          <input type="password" name="password"  class="bd-grey-light" placeholder="Parola"/>
+          <br><br><br>
+          <a class="slim-button float-left">Intra in cont</a><div class="space float-left"></div><a class="slim-button float-left">Fa-mi cont!</a>-->
+          <%if user_signed_in? %>
+          <%= render file: 'users/edit'%>
+          <%end%>
+        </div>
+        <p></p>
+       
+        
+    </div>
+  </div>

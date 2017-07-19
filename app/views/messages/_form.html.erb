@@ -1,0 +1,38 @@
+<%if user_signed_in? %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+	
+	<% if current_user.prenume != nil && current_user.nume !=nil %>
+	<%= f.text_field :nume, placeholder:"Nume", :value => current_user.nume + ' ' + current_user.prenume %>
+	<%else%>
+	<%= f.text_field :nume, placeholder:"Nume", :value => current_user.nume %>
+	<%end%>
+	
+	<%= f.text_field :email, placeholder:"Email", :value => current_user.email %>
+	<!--
+	<% if tip =='medic'%>
+	<% if current_user.sickness == nil %>
+  		<%= f.select :sickness, options_for_select(['Alege afectiunea','Reumatism', 'Cardiac','Artrita','Cronic']),{}, class: 'bd-grey-light', style:"color:black; width:500px;"%>
+  	<%else%>
+  		<%= f.select :sickness, options_for_select(['Alege afectiunea','Reumatism', 'Cardiac','Artrita','Cronic'], current_user.sickness), {}, class: 'bd-grey-light',  style:"color:black; width:500px;"%>
+  	<%end%>
+	
+	<%end%>
+-->
+	<%else%>
+	
+ 	<%= f.text_field :nume, placeholder:"Nume" %>
+  	
+  	<%= f.text_field :email, placeholder:"Email" %>
+  	<!--
+  	<% if tip =='medic'%>
+  	<%= f.select :sickness, options_for_select(['Alege afectiunea','Reumatism', 'Cardiac','Artrita','Cronic']),{},class: 'bd-grey-light', style:"color:black; width:500px;"%>
+  	<%end%>
+	-->
+	<%end%>
+
+	<div class="space"></div>
+  	<%= f.text_area :content, placeholder:"Mesaj", rows: "10" %>
+  	<%= f.hidden_field :tip, :value => tip %>
+  	<%= f.hidden_field :is_validated, value:'false'%>
+	<br />
+	<br />

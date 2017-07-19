@@ -1,0 +1,88 @@
+	.longcontent {
+    margin: 25% 5%;
+    text-align:center;
+    background: green;
+	padding: 70px;
+	
+
+}
+.modal {
+	
+    position: fixed;
+    overflow: auto;
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 100%;
+	padding: 5px;
+
+    
+    background: rgba(0, 0, 0, 0.95);
+	display: none;
+	z-index: 5000;
+	overflow-y: auto !important;
+	
+    
+}
+
+.modal .longcontent {
+    background: White;
+    margin: 10% 20%;
+	
+}
+
+@media all and (max-width:1000px) and (min-width:700px){
+	
+	
+	
+	.longcontent {
+    margin: 10% 5%;
+    text-align:center;
+    background: green;
+	padding: 20px;
+		font-size: 0.8em;
+	
+
+}
+}
+@media all and (max-width:700px) and (min-width:300px){
+	
+	.modal .longcontent {
+    background: White;
+    margin: 20px 20px;
+	
+}
+	
+	
+	#modal1 h1{
+	font-size: 1.8em;
+	}
+	#modal2 h1{
+	font-size: 1.8em;
+	}
+	#modal3 h1{
+	font-size: 1.8em;
+	}
+	#modal4 h1{
+	font-size: 1.8em;
+	}
+	#modal4 h1{
+	font-size: 1.8em;
+	}
+	#modalproprietati h1{
+		font-size: 1.8em;
+	}
+	#modalabsorbtie h1{
+		font-size: 1.8em;
+	}
+	#modalstiinta h1{
+		font-size: 1.8em;
+	}
+	
+	.longcontent {
+    margin: 10% 5%;
+    text-align:center;
+    background: green;
+	padding: 40px;
+	
+
+}
+}

@@ -1,0 +1,790 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Curcumin Shop</title>
+
+<%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'square', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<!--
+<link rel="stylesheet" media="all and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1)"    href="css/phones.css"/>
+<link rel="stylesheet" media="all and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)"    href="css/phones.css"/>
+<link rel="stylesheet" media="all and (max-device-width: 767px) and (min-device-width: 641px)" href="css/device-max767.css"/>
+-->
+
+<%= stylesheet_link_tag 'queries_iphone', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'queries_samsung', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'queries_tablet', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'carousel', 'data-turbolinks-track': 'reload' %>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<%= javascript_include_tag 'modalJss', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'cssmodal', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'desktopcss', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'formular', 'data-turbolinks-track': 'reload' %>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<script>
+var transport = 15;
+
+
+function calcultotal()
+{
+<% if user_signed_in? %>
+
+
+  var x = document.getElementById('total').innerHTML; 
+  document.getElementById('totalfinal').innerHTML = x;
+
+  
+
+x = document.getElementById('totalfinal').innerHTML;
+
+if (x <= 200)
+   {
+    document.getElementById('totalfinal').innerHTML = parseFloat(x) + transport;
+    document.getElementById('transport').innerHTML = transport;
+   }
+else{
+  document.getElementById('transport').innerHTML = 0;
+}
+
+
+if (parseFloat(document.getElementById('totalfinal').innerHTML) == transport)
+  {document.getElementById('totalfinal').innerHTML=0;}
+
+
+
+x = document.getElementById('pretintreg').innerHTML; 
+  document.getElementById('pretintregfinal').innerHTML = x;
+
+x = document.getElementById('pretintregfinal').innerHTML;
+
+if (x <= 200)
+   {
+    document.getElementById('pretintregfinal').innerHTML = parseFloat(x) + transport;
+    
+   }
+
+
+
+if (parseFloat(document.getElementById('pretintregfinal').innerHTML) == transport)
+  {document.getElementById('pretintregfinal').innerHTML=0;}  
+
+
+
+<%else%>
+
+var x = document.getElementById('total').innerHTML; 
+  document.getElementById('totalfinal').innerHTML = x;
+  
+
+x = document.getElementById('totalfinal').innerHTML;
+
+if (x <= 200)
+   {
+    document.getElementById('totalfinal').innerHTML = parseFloat(x) + transport;
+    document.getElementById('transport').innerHTML = transport;
+   }
+else{
+  document.getElementById('transport').innerHTML = 0;
+}
+
+
+if (parseFloat(document.getElementById('totalfinal').innerHTML) == transport)
+  {document.getElementById('totalfinal').innerHTML=0;}
+
+
+
+
+<%end%>
+
+}
+
+
+
+</script>
+
+</head>
+
+<body>
+<!--
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg %>
+<% end %> 
+-->
+<div class="modal" id="modal_notice" style="z-index:6000;">
+    <div class="longcontent">
+       
+      <% if notice == 'Multumim!' || notice == 'Multumim!medic'%>
+        Mesajul a fost transmis cu success!
+       
+       <%elsif notice == 'Verifica datele introduse!medic'%>
+       Verifica datele introduse!
+       
+       <%elsif notice == 'Date invalide!' || notice == 'Date invalide!control'%>
+       Date invalide!
+       
+       <%elsif notice == "Bine ai venit! Ai fost autentificat cu succes!"%>
+       Bine ai venit! Ai fost autentificat cu succes!
+       
+       <%elsif notice == "Ti-ai actualizat contul cu succes!"%>
+       Ti-ai actualizat contul cu succes!
+       
+       <%elsif notice == "Ai ieșit din cont cu succes!"%>
+        Ai ieșit din cont cu succes!
+
+       <%elsif notice == "Instructiunile au fost trimise pe e-mail!"%>
+       Instructiunile au fost trimise pe e-mail!
+       
+       <%end%>
+    </div>
+  </div>
+
+
+     <div class="modal" id="modal_menu">
+    <div class="longcontent tc-grey-light" style="background-color: transparent;">
+        <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_menu');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
+        
+        <div class="container-responsive max600 align-left">
+            <h1 class="align-left capital">CURCUMIN95</h1>
+            
+            <h2 class="capital align-left" style="clear:both">&amp; Bioperine</h2>
+            <a class="tc-grey-light link link-focus float-left thin" style="clear:both">Comanda</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both">Stiinta</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both">Beneficii</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both">Intreaba medicul</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both">Contact</a><br><br><br>
+          
+          
+        </div>
+        <p></p>
+       
+        
+    </div>
+  </div>
+
+<div class="modal" id="modal9">
+    <div class="longcontent">
+
+       Adauga minim un produs!
+        
+    </div>
+  </div>
+
+<div class="modal" id="modal10">
+    <div class="longcontent">
+
+       Completeaza campurile marcate cu rosu!
+        
+    </div>
+  </div>
+
+  <div class="modal" id="modal11">
+    <div class="longcontent">
+
+       Stoc epuizat!
+        
+    </div>
+  </div>
+
+      <div class="modal" id="modal6">
+    <div class="longcontent">
+       
+        
+        
+        <div id="modal1_close" class="float-right slim-button small tc-black-light" onClick="hide_modal('modal6');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
+        <br><br>
+        <h1 class= "align-left tc-blue biggest">Observatii</h1>
+      <p class="align-left medium">                          Acesta este un supliment alimentar si nu înlocuieste o dietă variată şi echilibrată şi un mod de viață sănătos. A nu se lăsa la îndemâna şi la vederea copiilor mici. Capsulele au aromă şi miros neutre, obținute 100% din surse de plante, potrivite pentru vegetarieni. Daca observatii reactii neplacute, adresati-va medicului personal sau prin intermediul rubricii noastre “intreaba” medicul. 
+                                                                                                               
+    </p>                     
+<br>
+ <h2 class="tc-blue align-left huge">Contraindicatii</h2>
+<p class="align-left medium">                                                                                         Nu se asociaza cu anticoagulante, antiacide, antiagregante plachetare Contraindicat in caz de obstructii ale cailor biliare, persoanelor care sufera de hipertiroida, anemie feripriva, femeilor insarcinate si mamelor care alapteaza Persoanele aflate sub tratament medicamentos trebuie sa consulte medicul inainte de administrare.   
+    </p> <br>
+      <h2 class="tc-blue align-left huge">Mod de administratie</h2>
+<p class="align-left medium">                                 2-4 capsule pe zi, functie de greutatea corporala<br><br>  Este recomandat sa fie administrat imediat dupa masa, pentru o absorbtie mai eficienta. Exceptie face situatia in care este administrat pentru H. Pylori (in gastrite, ulcere gastrice) – in aceasta situatie este mai eficient sa fie luat cu o minim o ora inainte de masa.  Nu se administreaza copiilor si adolescentilor inainte de maturizarea sexuala  
+    </p>   
+       <h2 class="tc-blue align-left huge">Compozitie</h2>
+<p class="align-left medium">                                 Curcumin95 – 350mg; <br>
+BioPerine (extract cu 95% piperina) – 5mg <br>
+Celuloza microcristalina – 40mg; <br>
+Stearat de magneziu vegetal – 5mg; <br>
+Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>  
+    </p>                     
+       <br>
+       <button class="slim-button white tc-blue medium small" id = "modal1_close" onClick="hide_modal('modal6');" >Close</button>
+        
+    </div>
+  </div>
+
+  <div class="modal" id="modal7">
+    <div class="longcontent"> 
+        <div id="modal1_close" class="float-right slim-button small tc-black-light" onClick="hide_modal('modal7');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
+        <br><br>
+        <h1 class= "align-left tc-blue biggest">Parerile clientilor</h1>
+              <br><br>
+    <% Message.where(tip: 'parere').each do |mesaj| %>
+      <%if mesaj.is_validated == 'true' %>
+        <p class="align-left medium"><%=mesaj.content%> - <%=mesaj.nume%></p>
+    <%end%>
+      
+  <% end %>                                                                                                     
+                         
+<br>
+ 
+
+       <br>
+       <button class="slim-button white tc-blue medium small" id = "modal1_close" onClick="hide_modal('modal7');" >Close</button>
+        
+    </div>
+  </div>
+
+
+<div class="modal" id="modal_login"><!--render de sign in-->
+    <div class="longcontent tc-grey-light" style="background-color: transparent;">
+        <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_login');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
+        
+        <div class="container-responsive max600">
+            
+          <!--<input type="email" name="email" class="bd-grey-light" placeholder="Email"/>
+          <input type="password" name="password"  class="bd-grey-light" placeholder="Parola"/>
+          <br><br><br>
+          <a class="slim-button float-left">Intra in cont</a><div class="space float-left"></div><a class="slim-button float-left">Fa-mi cont!</a>-->
+          <%= render partial: 'users/index'%>
+        </div>
+        <p></p>
+       
+        
+    </div>
+  </div>
+
+  <div class="modal" id="modal_edit"><!--render de sign in-->
+    <div class="longcontent tc-grey-light" style="background-color: transparent;">
+        <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_edit');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
+        
+        <div class="container-responsive max600">
+            
+          <!--<input type="email" name="email" class="bd-grey-light" placeholder="Email"/>
+          <input type="password" name="password"  class="bd-grey-light" placeholder="Parola"/>
+          <br><br><br>
+          <a class="slim-button float-left">Intra in cont</a><div class="space float-left"></div><a class="slim-button float-left">Fa-mi cont!</a>-->
+          <%if user_signed_in? %>
+          <%= render file: 'users/edit'%>
+          <%end%>
+        </div>
+        <p></p>
+       
+        
+    </div>
+  </div>
+  
+     <div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin">
+      <img src="<%=request.base_url %>/assets/icons/1492628996_menu.png" class="translucent link-focus" style="height: 30px; margin:5px; position: relative; padding: 0; float: left;" onClick="show_modal('modal_menu')">
+      <img src="<%=request.base_url %>/assets/icons/1492629013_mail.png" class="translucent link-focus" style="height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" >
+      <img src="<%=request.base_url %>/assets/icons/1492629028_cart.png" class="translucent link-focus" style="height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" >
+      <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" >
+    </div>
+    
+  <div id="section_ten" class="section_full tc-blue shadow-bottom" style="background-color: whitesmoke;">
+      <div id="menu_desktop" class="shadow-bottom"  style="background-color: whitesmoke;">
+        
+        
+            <a class="float-left link-blue" style="margin-top: 10px; margin-left: 20px; display: inline-block;" href="<%=request.base_url%>" >
+              Acasa
+            </a>
+            <% if user_signed_in? && current_user.tip == "admin" %>
+            <a class="float-left link-focus-blue" style="margin-top: 10px; margin-left: 20px; display: inline-block;" href="<%=request.base_url%>/orders" >
+              Vizualizeaza comenzi
+            </a>
+            <%end%>
+
+            <a class="float-right">
+              <img src="<%=request.base_url %>/assets/icons/1492629028_cart.png" class="icon translucent contained position-v-middle">
+            </a>
+            <% if user_signed_in? %>
+            <a class="float-right">
+              <img src="<%=request.base_url%>/assets/icons/1492812098_avatar.png" class="icon translucent contained position-v-middle" onClick="show_modal('modal_edit')"><p style="color:green; font-size:0.8em;">on-line</p></a>
+              <%else%>
+            <a class="float-right">
+              <img src="<%=request.base_url%>/assets/icons/1492812098_avatar.png" class="icon translucent contained position-v-middle" onClick="show_modal('modal_login')">
+            </a>
+            <% end %>
+      </div>
+    <div class="container-responsive align-left" id="scroll_comanda">
+        <div class="container-half-b max8000">
+          <h2 class="capital nomargin huge">Extract</h2>
+          <h1 class="capital huge">Curcumin95 &amp; Bioperine</h1>
+          
+        </div>
+      </div>
+        <div id="section_comanda" class="container-responsive align-left" style="display: table; position: relative;">
+            
+        <% Product.all.each do |produs| %>
+          <div class="container-half-b max800 float-left shadow-bottom"  style="padding-bottom: 10px; clear: both;">
+              <div style="width:50%; max-width: 400px; position: relative; float: left; clear: both;" class="align-left nomargin nopadding">
+                <span class="slim-contour" style="margin-right:5px; border: 1px solid whitesmoke;">
+                  <%= produs.nume%>
+                  </span>
+          </div>
+              <div style="width:50%; max-width: 600px; min-width: 400px; position: relative; float: left; display: table-cell; vertical-align: middle;" class="align-left nomargin nopadding">
+                <span class="slim-contour2" style="margin-right:5px;">
+                <% if user_signed_in? %>
+                   <span style='text-decoration: line-through;'>
+                   <%= number_with_precision(produs.pret, strip_insignificant_zeros: true)%> lei
+                   </span>
+                   <%= number_with_precision(produs.pret*0.9, strip_insignificant_zeros: true)%> lei
+                  
+                  <%else%>
+                  <%= number_with_precision(produs.pret, strip_insignificant_zeros: true)%> lei
+                  <%end%>
+                  </span>
+                  <% if produs.stoc != nil && produs.stoc > 0 %>
+                  <span class="slim-contour" onclick="minus<%=produs.id%>()" style="cursor: pointer;">
+                 -
+                 </span>
+                  <span class="slim-contour">
+                   <b id='inputnr<%=produs.id%>'>0</b>
+                  </span>
+                  <span class="slim-contour" onclick="plus<%=produs.id%>()" style="cursor: pointer;">
+                 +
+                </span>
+                  <span class="slim-contour" style="margin-left:5px;">
+                pret total: <b id='outputnr<%=produs.id%>'>0</b><b>lei</b>
+                </span>
+                <%else%>
+                <span class="slim-contour" style="display:none;">
+                   <b id='inputnr<%=produs.id%>'>0</b>
+                  </span>
+                <span class="slim-contour">
+                Stoc epuizat
+                </span>
+                <%end%>
+          </div>
+      </div>
+      <% if user_signed_in? && current_user.tip =='admin' %>
+                <div class="float-left">
+                STOC:
+                <%= form_for produs, url: product_path(produs), method: :put do |g| %>
+                <%= g.number_field :stoc, in: 0..99999 %>
+                <%= g.submit 'Actualizare stoc' %> 
+                <%end%>
+                <br/>
+                <br/>
+                </div>
+
+                <%end%>
+<script>
+
+function pret<%=produs.id%>(){
+var y = document.getElementById('inputnr<%=produs.id%>').innerHTML;
+<% if user_signed_in? %>
+
+if (parseFloat(document.getElementById('outputnr<%=produs.id%>').innerHTML) < (parseInt(y)* <%= produs.pret*0.9%>)){
+document.getElementById('total').innerHTML = parseFloat(document.getElementById('total').innerHTML) + <%= produs.pret*0.9%>; 
+
+document.getElementById('pretintreg').innerHTML = parseFloat(document.getElementById('pretintreg').innerHTML) + <%= produs.pret%>;
+
+calcultotal();
+}
+else{
+  document.getElementById('total').innerHTML = parseFloat(document.getElementById('total').innerHTML) - <%= produs.pret*0.9%>;
+
+document.getElementById('pretintreg').innerHTML = parseFloat(document.getElementById('pretintreg').innerHTML) - <%= produs.pret%>;
+
+ calcultotal();
+}
+
+document.getElementById('outputnr<%=produs.id%>').innerHTML = parseInt(y)* <%= produs.pret*0.9%>;
+
+<%else%>
+
+if (parseFloat(document.getElementById('outputnr<%=produs.id%>').innerHTML) < (parseInt(y)* <%= produs.pret%>)){
+document.getElementById('total').innerHTML = parseFloat(document.getElementById('total').innerHTML) + <%= produs.pret%>; calcultotal();}
+else{
+  document.getElementById('total').innerHTML = parseFloat(document.getElementById('total').innerHTML) - <%= produs.pret%>; calcultotal();}
+
+document.getElementById('outputnr<%=produs.id%>').innerHTML = parseInt(y)* <%= produs.pret%>;
+
+<%end%>
+}
+
+      function minus<%=produs.id%>() {
+        var x = document.getElementById('inputnr<%=produs.id%>').innerHTML;
+        if(parseInt(x)>0){
+        document.getElementById('inputnr<%=produs.id%>').innerHTML= parseInt(x)-1;
+        pret<%=produs.id%>();
+        check<%=produs.id%>();
+      }
+      }
+      
+      function plus<%=produs.id%>(){
+        var x = document.getElementById('inputnr<%=produs.id%>').innerHTML;
+       if(parseInt(x) < <%=produs.stoc %>){
+        document.getElementById('inputnr<%=produs.id%>').innerHTML= parseInt(x)+1;
+        pret<%=produs.id%>();
+        check<%=produs.id%>();        
+       }
+       else{
+        show_modal('modal11');
+        setTimeout( function ( ) { hide_modal('modal11');}, 1500 );
+       }
+      
+      }
+
+
+
+function check<%=produs.id%>(){
+var y = document.getElementById('inputnr<%=produs.id%>').innerHTML;
+document.getElementById("order_order_products_attributes_<%=produs.id - 1%>_numar").value= parseInt(y);
+
+}
+
+
+</script>
+      <% end %>
+          
+        <div class="container-half-b max800 float-left" style="padding-bottom: 10px;">
+              <div style="width:50%; max-width: 400px; position: relative; float: left;" class="align-left nomargin nopadding">
+                <span class="slim-contour" style="margin-right:5px; border: 1px solid whitesmoke;">
+                   
+                  </span>
+          </div>
+              <div style="width:50%; max-width: 600px; min-width: 400px; position: relative; float: left;display: table-cell; vertical-align: middle; clear: both;" class="align-left nomargin nopadding">
+                
+                  <span class="slim-contour big bold nopadding" style="margin-left:0; border: 1px solid whitesmoke; position: relative; float: left; clear: both;">
+                Transport: <span id="transport">15</span> lei
+                <p id='total' class="tc-blue medium lei" style="display: none;">0</p>
+                </span>
+          </div>
+      </div>
+          
+            <small class="thin small" style="position: relative; clear: both; float: left;">*Transport gratuit pentru comenzi de peste 200 lei</small>
+<% if user_signed_in? %>
+<div class="container-half-b max1000 float-left tc-blue" style="margin-top: 50px;">
+            <div style="width:45%; max-width: 400px; min-width: 200px; position: relative; float: left; padding-right: 3%; margin-bottom: 5%;">
+            <div class="square bd-grey tc-grey">
+              <div class="content">
+                <div><span>
+                <h1 class="tc-grey align-center nomargin">PRET INTREG</h1>
+                <h1 id='pretintregfinal' class="tc-grey medium lei" style="font-size:4em; margin-top: 20px;">0</h1>
+                <!--
+                <h2 class="tc-grey align-center nomargin">Fa-mi</h2>
+                <h2 class="tc-grey align-center">cont!</h2>
+                <h1 class="tc-grey impossible thin">10%</h1>
+                <p class="tc-grey">reducere la checkout</p>
+                -->
+              <p id='pretintreg' class="lei" style="display:none;">
+              0
+              </p>
+                </span></div>
+              </div>
+            </div>
+          </div>
+<%else%>
+          <div class="container-half-b max1000 float-left tc-blue" style="margin-top: 50px;">
+            <div style="width:45%; max-width: 400px; min-width: 200px; position: relative; float: left; padding-right: 3%; margin-bottom: 5%;">
+            <div onclick="show_modal('modal_login')" class="square bd-blue tc-blue" style="cursor: pointer;">
+              <div class="content">
+                <div><span>
+                <h2 class="tc-blue align-center nomargin">Fa-mi</h2>
+                <h2 class="tc-blue align-center">cont!</h2>
+                <h1 class="tc-blue impossible thin">10%</h1>
+                <p class="tc-blue">reducere la checkout</p>
+              
+                </span></div>
+              </div>
+            </div>
+          </div>
+
+<%end%>
+          <% if user_signed_in? %>
+            <div style="width:45%; max-width: 400px; min-width: 200px; position: relative; float: left; padding-right: 3%; margin-bottom: 5%;"  id="div_flacon">
+            <div class="square bd-blue tc-blue">
+              <div class="content">
+                <div><span>
+                <h1 class="tc-blue align-center nomargin">MEMBRI</h1>
+                <p class="tc-blue align-center slim nomargin">beneficiaza de reduceri</p>
+                <h1 id='totalfinal' class="tc-blue medium lei" style="font-size:4em; margin-top: 20px;">0</h1><br>
+                <a class="slim-button tc-blue big normal" style="padding-left:55px; padding-right: 55px;"  onClick='gocheck()'>continua</a>
+              
+                </span></div>
+              </div>
+            </div>
+          </div>
+          <%else%>
+          <div style="width:45%; max-width: 400px; min-width: 200px; position: relative; float: left; padding-right: 3%; margin-bottom: 5%;"  id="div_flacon">
+            <div class="square bd-blue tc-blue">
+              <div class="content">
+                <div><span>
+                <h1 class="tc-blue align-center nomargin" style="font-weight: lighter;">Pret total</h1>
+                
+                <h1 id='totalfinal' class="tc-blue thin lei" style="font-size:4em; margin-top: 20px;">0</h1><br>
+                <a class="slim-button tc-blue big normal" style="padding-left:55px; padding-right: 55px;" onClick='gocheck()'>continua fara cont</a>
+              
+                </span></div>
+              </div>
+            </div>
+          </div>
+          <%end%>
+          <a class="slim-button tc-blue nobackground normal slim" type="button" id="modal1_open" onClick="show_modal('modal6')" style="position: relative; float: left; clear: both;">Observatii si Contraindicatii</a>
+          <!--<a class="slim-button tc-blue nobackground normal slim" type="button" id="modal1_open" onClick="show_modal('modal7')" style="position: relative; float: center; clear: both;">Parerile clientilor</a>
+            <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;"> 
+          <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">
+          <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">
+          <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">
+          <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">  -->
+          </div>
+         
+          <figure id="flacon_comanda" class="responsive-background">
+              
+          </figure>
+
+
+        </div>
+        
+    </div>
+    
+
+  <div class="section_auto align-center">
+    <div class="container-responsive nomargin nopadding">
+        <!--<div class="container-responsive nomargin nopadding align-center" style="width:24.5%; min-width: 150px;" >
+          <img src="<%=request.base_url %>/assets/icons/natural.png" style="width:50%; max-width: 100px;">
+          <h5>100% Natural</h5>
+        </div>
+        <div class="container-responsive nomargin nopadding align-center" style="width:24.5%; min-width: 150px;" >
+          <img src="<%=request.base_url %>/assets/icons/natural.png" style="width:50%; max-width: 100px;">
+          <h5>100% Natural</h5>
+        </div>
+        <div class="container-responsive nomargin nopadding align-center" style="width:24.5%; min-width: 150px;" >
+          <img src="<%=request.base_url %>/assets/icons/natural.png" style="width:50%; max-width: 100px;">
+          <h5>100% Natural</h5>
+        </div>
+        <div class="container-responsive nomargin nopadding align-center" style="width:24.5%; min-width: 150px;" >
+          <img src="<%=request.base_url %>/assets/icons/natural.png" style="width:50%; max-width: 100px;">
+          <h5>100% Natural</h5>
+        </div>-->
+
+        
+    </div>
+  </div>
+
+  <div id='checkoutdisplay' class="section-large shadow-top align-center" style="display: none !important;" >
+   <div class="container-responsive align-center tc-blue" >
+     <h2>Detalii de livrare si facturare</h2>
+     <div class="container-half-b max600">
+ 
+
+    <%= form_for @order do |f| %>
+    <%= render partial: 'order_form', locals: {f: f} %>
+    <% if user_signed_in? %>
+    <div class="float-left">
+    Bifeaza pentru salvarea datelor de livrare
+    <%= check_box_tag 'save_details' %>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+    <%end%>
+    <button type="button" class="slim-button" onClick="finalizare()">Verifica comanda</button>
+
+   <div class="modal" id="modal8">
+    <div class="longcontent"> 
+        <div id="modal1_close" class="float-right slim-button small tc-black-light" onClick="hide_modal('modal8');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
+      <p id='textcomanda'></p>
+        <%= f.submit 'Finalizeaza comanda', id: 'comanda', class: "btn btn-primary"%>
+      <%end%>
+           
+    </div>
+  </div>
+
+
+
+    </div>
+   </div>
+     
+  </div>
+
+
+  <script>
+  function finalizare()
+  {var ok=0;
+
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/;
+  var re1 = /^\d+$/;
+
+  var nume = document.getElementById("name");
+  var prenume = document.getElementById("prenume");
+  var email = document.getElementById("email");
+  var phone = document.getElementById("phone");
+  var tara = document.getElementById("tara");
+  //var judet = document.getElementById("judet");
+  var oras = document.getElementById("oras");
+  var codpostal = document.getElementById("codpostal");
+  var adresa = document.getElementById("adresa");
+
+if (nume.value == ''){
+  nume.style.borderBottomColor = 'red';
+  ok++;
+}else
+{
+  nume.style.borderBottomColor = 'green';
+}
+
+if (prenume.value == ''){
+  prenume.style.borderBottomColor = 'red';
+  ok++;
+}else 
+{
+  prenume.style.borderBottomColor = 'green';
+}
+
+if (email.value == ''){
+  email.style.borderBottomColor = 'red';
+  ok++;
+}
+else if (re.test(email.value)==false)
+{ document.getElementById("email_valid").innerHTML='Email invalid!';
+  email.style.borderBottomColor = 'red';
+  ok++;
+}else 
+{ document.getElementById("email_valid").innerHTML='';
+  email.style.borderBottomColor = 'green';
+}
+
+if (phone.value == ''){
+  phone.style.borderBottomColor = 'red';
+  ok++;
+}else if (re1.test(phone.value)==false) 
+{ document.getElementById("phone_valid").innerHTML='Numar invalid!';
+  phone.style.borderBottomColor = 'red';
+  ok++;
+}else if (phone.value.length < 10)
+{ document.getElementById("phone_valid").innerHTML='Prea putine cifre!';
+  phone.style.borderBottomColor = 'red';
+  ok++;
+}else
+{ document.getElementById("phone_valid").innerHTML='';
+  phone.style.borderBottomColor = 'green';
+}
+
+if (tara.value == ''){
+  tara.style.borderBottomColor = 'red';
+  ok++;
+}else 
+{
+  tara.style.borderBottomColor = 'green';
+}
+
+//if (judet.value == ''){
+//  judet.style.borderBottomColor = 'red';
+//  ok++;
+//}else 
+//{
+//  judet.style.borderBottomColor = 'green';
+//}
+
+if (oras.value == ''){
+  oras.style.borderBottomColor = 'red';
+  ok++;
+}else 
+{
+  oras.style.borderBottomColor = 'green';
+}
+
+//if (codpostal.value == ''){
+//  codpostal.style.borderBottomColor = 'red';
+//  ok++;
+//}else 
+//{
+//  codpostal.style.borderBottomColor = 'green';
+//}
+
+if (adresa.value == ''){
+  adresa.style.borderColor = 'red';
+  ok++;
+}else 
+{
+  adresa.style.borderColor = 'green';
+}
+
+if (ok>0)
+  { 
+    show_modal("modal10");
+    setTimeout( function ( ) { hide_modal("modal10");}, 1500 );
+    document.getElementById("checkoutdisplay").scrollIntoView();
+  }
+else if (parseFloat(document.getElementById('total').innerHTML) <= 0) {
+  show_modal("modal9");
+  setTimeout( function ( ) { hide_modal("modal9");}, 1500 );
+  document.getElementById("scroll_comanda").scrollIntoView();
+}
+
+else{
+var mesaj='<h><strong>Comanda ta</strong></h4><br/>';
+mesaj = mesaj + '<br/>';
+<% Product.all.each do |produs| %>
+ if (document.getElementById('inputnr<%=produs.id%>').innerHTML != 0)
+ {mesaj = mesaj + '<%=produs.nume%>' + ' ' + 'x' + ' ' + document.getElementById('inputnr<%=produs.id%>').innerHTML + '<br/>';
+
+ }
+
+  <%end%>
+  mesaj = mesaj + 'Transport = ' + document.getElementById('transport').innerHTML + ' LEI'
+  mesaj = mesaj + '<br/>Total = ' + document.getElementById('totalfinal').innerHTML + ' LEI';
+  document.getElementById('textcomanda').innerHTML = mesaj;
+    show_modal('modal8');
+  }
+
+}
+
+function gocheck()
+{ 
+if (parseFloat(document.getElementById('total').innerHTML) > 0) {
+  document.getElementById("checkoutdisplay").style.display = "inline";
+  document.getElementById("checkoutdisplay").scrollIntoView();
+}
+else
+{
+ show_modal("modal9");
+ setTimeout( function ( ) { hide_modal("modal9");}, 1500 );
+ document.getElementById("scroll_comanda").scrollIntoView();
+}
+
+}
+
+  </script>
+
+  <%= render file: 'layouts/footer'%>
+  
+</body>
+</html>
+
+<%if notice == 'Multumim!' || notice == 'Verifica datele introduse!' || notice == 'Multumim!medic' || notice == 'Verifica datele introduse!medic' || notice == 'Date invalide!' || notice =='Date invalide!control' || notice == "Bine ai venit! Ai fost autentificat cu succes!" || notice == "Ti-ai actualizat contul cu succes!" || notice == "Ai ieșit din cont cu succes!" || notice == "Instructiunile au fost trimise pe e-mail!"%>
+<script type="text/javascript">
+
+<% if notice == 'Multumim!medic' || notice == 'Verifica datele introduse!medic' %>
+document.getElementById("section_six").scrollIntoView();
+<%elsif notice =='Date invalide!control'%>
+show_modal('modal_login');
+<%elsif notice =='Date invalide!'%>
+show_modal('modal_edit');
+<%elsif  notice == 'Multumim!' || notice == 'Verifica datele introduse!'%>
+document.getElementById("contact_left").scrollIntoView();
+<%end%>
+
+show_modal('modal_notice');
+
+setTimeout( function ( ) { hide_modal('modal_notice');}, 1500 );
+</script>
+
+<%end %>
+<!--
+                                <img src="<%=request.base_url%>/assets/Logo-IanaLife_6969.png" style="width:100%; max-width:300px; height:100%; max-height: 170px;">-->

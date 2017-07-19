@@ -1,0 +1,299 @@
+<!--
+Nume: <%= @order.nume%><br/>
+Prenume: <%= @order.prenume%><br/>
+Email: <%= @order.email%><br/>
+Telefon: <%= @order.telefon%><br/>
+Tara: <%= @order.tara%><br/>
+Judet: <%= @order.judet%><br/>
+Oras: <%= @order.oras%><br/>
+Codpostal: <%= @order.codpostal%><br/>
+Adresa: <%= @order.adresa%><br/>
+Mesaj: <%= @order.mesaj%><br/>
+Valoare: <%= @order.pret%><br/>
+Membru: <%if @order.user_id != nil %> da <%else%> nu <%end%><br/>
+<% Product.all.each do |produs| %>
+<%if OrderProduct.find_by(product_id: produs.id, order_id: @order.id) != nil && OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar != 0%>
+<%= produs.nume%> x <%= OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar%><br/>
+<%end%>
+<%end%>
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Factura Proforma nr.<%= sprintf '%05d', @order.id %></title>
+    
+    <style>
+    .invoice-box{
+        max-width:1000px;
+        margin:auto;
+        padding:30px;
+        border:1px solid #eee;
+        box-shadow:0 0 10px rgba(0, 0, 0, .15);
+        font-size:16px;
+        line-height:24px;
+        font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color:#555;
+    }
+    
+    .invoice-box table{
+        width:100%;
+        line-height:inherit;
+        text-align:left;
+    }
+    
+    .invoice-box table td{
+        padding:5px;
+        vertical-align:top;
+    }
+    
+    .invoice-box table tr td:nth-child(n + 2){
+        text-align:center;
+    }
+    .invoice-box table tr td.top{
+        text-align:right;
+    }
+    
+    .invoice-box table tr.top table td{
+        padding-bottom:20px;
+    }
+    
+    .invoice-box table tr.top table td.title{
+        font-size:45px;
+        line-height:45px;
+        color:#333;
+    }
+    
+    .invoice-box table tr.information table td{
+        padding-bottom:40px;
+    }
+    
+    .invoice-box table tr.heading td{
+        background:#eee;
+        border-bottom:1px solid #ddd;
+        font-weight:bold;
+    }
+    
+    .invoice-box table tr.details td{
+        padding-bottom:20px;
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom:1px solid #eee;
+    }
+    
+    .invoice-box table tr.item.last td{
+        border-bottom:none;
+    }
+    
+    .invoice-box table tr.total{
+        
+        font-weight:bold;
+        
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+        
+        .invoice-box table tr.information table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+    }
+
+.line{
+
+	border-top: 1px solid black;
+}
+    
+
+    table {
+    counter-reset: rowNumber;
+}
+
+table tr.item {
+    counter-increment: rowNumber;
+}
+
+table tr td.numar::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="7">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img class="preload-me retinized" srcset="http://www.curcumin95.ro/wp-content/uploads/2015/10/logo_site_test.png 1x, http://www.curcumin95.ro/wp-content/uploads/2015/10/logo_site_test.png 2x" alt="Curcumin 95 Iana Life - Bioperine" src="http://www.curcumin95.ro/wp-content/uploads/2015/10/logo_site_test.png" width="110" height="121">
+                                
+                            </td>
+                            
+                            <td>
+                                Factura Proforma nr. <%= sprintf '%05d', @order.id %><br>
+                                Data: <%= @order.created_at.strftime("%d.%m.%y")%><br>
+                                <br>
+                                <strong style="font-size: 1.5em;">Total: <%= number_with_precision(@order.pret, strip_insignificant_zeros: true) %> LEI</strong>
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="7">
+                    <table>
+                        <tr>
+                            <td>
+                             <strong>Emitent: S.C. IANA LIFE S.R.L</strong> <br>
+                             <br>
+                              CIF&nbsp;&nbsp;RO33781498<br>
+                              Nr. O.R.C./an&nbsp;&nbsp;J40/13020/2014<br>
+                              Adresa: Str. Cezar Boliac Nr. 72, Ap. 1<br>
+   							  Judet Bucuresti<br>
+   							  <br>
+   							  Cod IBAN&nbsp;&nbsp;RO14BTRLEURCRT0322064501<br>
+   							  BANCA TRANSILVANIA<br>
+   							  TEL:&nbsp;&nbsp;0725.01.33.99
+
+                            </td>
+                            
+                            <td class="top">
+                                <strong>Cumparator: <%=@order.nume%> <%= @order.prenume%>
+                                </strong><br>
+                                <br>
+                                Email:&nbsp;&nbsp;<%= @order.email%> <br>
+                                TEL:&nbsp;&nbsp;<%= @order.telefon %> <br>
+                                Oras:&nbsp;&nbsp;<%= @order.oras %><br>
+                                Adresa:&nbsp;&nbsp;<%= @order.adresa %><br>
+                                <br>
+                                <br>
+
+                                <% if @order.user_id != nil %>
+                                <strong style="font-size: 2em; border:2px solid black;">Discount 10%</strong>
+                                <%end%>
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Nr. crt.
+                </td>
+                
+                <td>
+                    Descriere si denumirea produselor
+                </td>
+
+                <td>
+                    UM
+                </td>
+
+                <td>
+                    Cantitate
+                </td>
+                
+                <td>
+                    Pret unitar<br>
+                    fara TVA
+                </td>
+                
+                <td>
+                    Valoare totala<br>
+                    fara TVA
+                </td>
+                
+                <td>
+                    Valoare<br>
+                    TVA
+                </td>
+               
+            </tr>
+            
+            <% Product.all.each do |produs| %>
+<%if OrderProduct.find_by(product_id: produs.id, order_id: @order.id) != nil && OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar != 0%>
+
+<% if @order.user_id != nil %>
+
+<tr class="item">
+<td class="numar"></td>
+<td><%= produs.nume%>(TVA 9%)</td> 
+<td>Buc</td>
+<td><%= OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar%></td>
+<td><%= produs.pret*0.9*0.91 %></td>
+<td><%= number_with_precision(produs.pret*0.9*OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar*0.91,  strip_insignificant_zeros: true) %></td>
+<td><%= number_with_precision(produs.pret*0.9*OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar*0.09,  strip_insignificant_zeros: true) %></td>
+</tr>
+
+<%else%>
+
+<tr class="item">
+<td class="numar"></td>
+<td><%= produs.nume%>(TVA 9%)</td> 
+<td>Buc</td>
+<td><%= OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar%></td>
+<td><%= produs.pret*0.91 %></td>
+<td><%= number_with_precision(produs.pret*OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar*0.91, strip_insignificant_zeros: true)  %></td>
+<td><%= number_with_precision(produs.pret*OrderProduct.find_by(product_id: produs.id, order_id: @order.id).numar*0.09,  strip_insignificant_zeros: true) %></td>
+</tr>
+<%end%>
+<%end%>
+<%end%>
+
+<%if @order.transport == 'true'%>
+<tr class="item">
+<td class="numar"></td>
+<td>Transport(TVA 19%)</td>
+<td>Buc</td>
+<td>1</td>
+<td><%=15*0.81%></td>
+<td><%=15*0.81%></td>
+<td><%=15*0.19%></td>
+</tr>
+
+<%else%>
+
+<tr class="item">
+<td class="numar"></td>
+<td>Transport</td>
+<td>Buc</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<%end%>
+
+  </table>
+  <br><br><br><br><br><br><br><br><br><br><br><br> 
+  <table>          
+           
+            
+            <tr class="total line">
+
+                
+                <td><center>
+                   <strong style="font-size: 1.5em;">Total: <%= number_with_precision(@order.pret, strip_insignificant_zeros: true) %> LEI</strong><br><br>
+                   <div style="font-size: 0.9em;">Circula fara stampila si semnatura, cf. Cod Fiscal, art. 155, alin. 19</div>
+                   </center>
+                </td>
+            </tr>
+       </table> 
+    </div>
+</body>
+</html>
