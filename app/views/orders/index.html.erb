@@ -12,7 +12,7 @@
   <p>Nu exista comenzi care contin termenul <%= params[:search] %>.</p>
 <% end %>
 -->
-<% @orders.each do |order| %>
+<% @orders.order('id ASC').each do |order| %>
 <%=order.nume%> <%=order.prenume%> din <%=order.oras%> a comandat pe <%= order.created_at.strftime("%d.%m.%y la %H:%M") %> in valoare de <%= order.pret %> LEI
 
 <%if current_user.tip =='admin'%>
