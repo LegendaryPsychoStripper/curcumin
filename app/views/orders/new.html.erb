@@ -149,6 +149,15 @@ if (parseFloat(document.getElementById('totalfinal').innerHTML) == transport)
             <h1 class="align-left capital">CURCUMIN95</h1>
             
             <h2 class="capital align-left" style="clear:both">&amp; Bioperine</h2>
+
+            <a class="tc-grey-light link  float-left thin" style="clear:both" href="<%=request.base_url%>" onClick="hide_modal('modal_menu');">
+              Acasa
+            </a><br><br><br>
+            <% if user_signed_in? && current_user.tip == "admin" %>
+            <a class="tc-grey-light link  float-left thin" style="clear:both" href="<%=request.base_url%>/orders" onClick="hide_modal('modal_menu');">
+              Vizualizeaza comenzi
+            </a><br><br><br>
+            <%end%>
             <a class="tc-grey-light link link-focus float-left thin" style="clear:both">Comanda</a><br><br><br>
           <a class="tc-grey-light link float-left thin" style="clear:both">Stiinta</a><br><br><br>
           <a class="tc-grey-light link float-left thin" style="clear:both">Beneficii</a><br><br><br>
@@ -279,23 +288,27 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
     </div>
   </div>
   
-     <div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin">
-      <img src="<%=request.base_url %>/assets/icons/1492628996_menu.png" class="translucent link-focus" style="height: 30px; margin:5px; position: relative; padding: 0; float: left;" onClick="show_modal('modal_menu')">
-      <img src="<%=request.base_url %>/assets/icons/1492629013_mail.png" class="translucent link-focus" style="height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" >
-      <img src="<%=request.base_url %>/assets/icons/1492629028_cart.png" class="translucent link-focus" style="height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" >
+     <div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin" style="display: inline-block !important; height: 10% !important;">
+      <img src="<%=request.base_url %>/assets/icons/1492628996_menu.png" class="translucent link-focus" style="height: 85%; margin:5px; position: relative; padding: 0; float: left;" onClick="show_modal('modal_menu')">
+      <!--<img src="<%=request.base_url %>/assets/icons/1492629013_mail.png" class="translucent link-focus" style="height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" >-->
+
+
+
+      <img src="<%=request.base_url %>/assets/icons/1492629028_cart.png" class="translucent link-focus" style="height: 85%; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" >
       
       <% if user_signed_in? %>
-            <a class="float-right">
-              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_edit')"><p style="color:green; font-size:0.8em;">on-line</p></a>
+            <a>
+              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 85%; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_edit')"><span style="color:green; font-size:0.8em; margin-top: 2%; float: right;">on-line</span>
+              </a>
               <%else%>
-            <a class="float-right">
-              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_login')">
-            </a>
+            
+              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 85%; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_login')">
+            
       <% end %>
     </div>
     
   <div id="section_ten" class="section_full tc-blue shadow-bottom" style="background-color: whitesmoke;">
-      <div id="menu_desktop" class="shadow-bottom"  style="background-color: whitesmoke;">
+     <!-- <div id="menu_desktop" class="shadow-bottom"  style="background-color: whitesmoke; display: none !important;">
         
         
             <a class="float-left link-blue" style="margin-top: 10px; margin-left: 20px; display: inline-block;" href="<%=request.base_url%>" >
@@ -318,8 +331,8 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
               <img src="<%=request.base_url%>/assets/icons/1492812098_avatar.png" class="icon translucent contained position-v-middle" onClick="show_modal('modal_login')">
             </a>
             <% end %>
-      </div>
-    <div class="container-responsive align-left" id="scroll_comanda">
+      </div>-->
+    <div class="container-responsive align-left" id="scroll_comanda" style="margin-top:10%;">
         <div class="container-half-b max8000">
           <h2 class="capital nomargin huge">Extract</h2>
           <h1 class="capital huge">Curcumin95 &amp; Bioperine</h1>

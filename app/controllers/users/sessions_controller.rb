@@ -8,7 +8,12 @@ class Users::SessionsController < Devise::SessionsController
     clean_up_passwords(resource)
     yield resource if block_given?
     #respond_with(resource, serialize_options(resource))
-    redirect_to :back
+    if notice == nil
+      redirect_to :back, notice: "Date invalide!control"
+    else
+      redirect_to :back, notice: "Instructiunile au fost trimise pe e-mail!"
+    end
+    
   end
 
   # POST /resource/sign_in

@@ -13,7 +13,7 @@ module Curcumin
     # -- all .rb files in that directory are automatically loaded.
     
     config.i18n.default_locale = "ro"	#language devise.ro.yml
-    
+    #config.autoload_paths += %W(#{config.root}/lib)
     
     config.before_configuration do
   		env_file = File.join(Rails.root, 'config', 'local_env.yml')
