@@ -11,7 +11,7 @@
 <%= render file:'devise/sessions/new'%>
 
 <a class='tc-white float-right' onclick="show_parola()">Parolă uitată?</a><br />
-<a class='slim-button2 round' onclick="show_newcont()">Nu ai cont? Creeaza-ti cont!</a>
+<a class='slim-button2' onclick="show_newcont()">Nu ai cont? Creeaza-ti cont!</a>
 </div>
 
 
@@ -19,7 +19,7 @@
 <h1 class="capital align-left">Creeaza-ti cont</h1><!--inregistrare-->
 
 <%= render file:'devise/registrations/new'%>
-<a class='slim-button2 round' onclick="show_cont()">Ai cont? Intra in cont!</a>
+<a class='slim-button2' onclick="show_cont()">Ai cont? Intra in cont!</a>
 </div>
 
 <div id="parola?" style="display: none;">
@@ -30,7 +30,7 @@
 <%= render file:'devise/passwords/new'%><br/>
 
 <% end -%>
-<a class='slim-button2 round' onclick="show_cont()">Ti-ai adus aminte? Intra in cont!</a>
+<a class='slim-button2' onclick="show_cont()">Ti-ai adus aminte? Intra in cont!</a>
 </div>
 <script>
 /*
