@@ -3,12 +3,12 @@ class Order < ApplicationRecord
 	has_many :order_products, dependent: :destroy
 	has_many :products, through: :order_products
 
-	validates :email, :presence => :true
-	validates :nume, :presence => :true
-	validates :prenume, :presence => :true
-	validates :tara, :presence => :true
+	validates :email, :presence => :true, allow_blank: false
+	validates :nume, :presence => :true, allow_blank: false
+	validates :prenume, :presence => :true, allow_blank: false
+	validates :tara, :presence => :true, allow_blank: false
 	#validates :judet, :presence => :true
-	validates :oras, :presence => :true
+	validates :oras, :presence => :true, allow_blank: false
 	
 	#validates :codpostal, :presence => :true
 	#validate :are_pret, on: :create

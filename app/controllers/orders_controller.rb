@@ -63,7 +63,7 @@ class OrdersController < ApplicationController
     end
     transport = 'false'
     pret = 0
-
+  #verificare validari order (se fute stocul)
     order_params[:order_products_attributes].each do |key, value|
       @product=Product.find(value[:product_id])
       @product.stoc = @product.stoc.to_i - value[:numar].to_i
@@ -170,6 +170,7 @@ class OrdersController < ApplicationController
     @order.destroy
     redirect_to :back, notice: 'Comanda anulata'
     #respond_with @order.destroy
+    #sa bag stocul la loc
 	end
 
 private

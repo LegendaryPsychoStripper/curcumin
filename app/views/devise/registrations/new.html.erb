@@ -16,7 +16,7 @@
   <div class="field">
     
     
-    <%= f.password_field :password,placeholder: 'Parola', style: "border-color: white;", autocomplete: "off", id: 'printchatbox3' %>
+    <%= f.password_field :password, placeholder: 'Parola', style: "border-color: white;", autocomplete: "off", id: 'printchatbox3' %>
     <!--<% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> caractere minimum)</em>
     <% end %>-->
@@ -26,15 +26,45 @@
 <!--</div>-->
 <center>
 <div class="actions">
+      <div class="float-left">
+      <input type="checkbox" onchange='show_submit()' autocomplete="off">
+          Am citit si sunt de acord cu <a onclick="hide_modal('modal_login'); show_modal('modal_termeni');">termenii si conditiile</a>.
+          <p id="termeni_mesaj" style="color:red; font-size: 1em;"></p>
+      </div>
+      
     <br/>
-          <%= f.submit "Fa-mi cont!", class: 'submit-button round'%>
+          <button type="button" id="submit_nu" class='submit-button round' onclick='termeni_mesaj()'>Fa-mi cont!</button>
+          <%= f.submit "Fa-mi cont!", class: 'submit-button round', style:'display:none;', id: "submit_da", type: "button"%>
     
     <br/><br/>
   </div>
 </center>
 <%end%>
+<script type="text/javascript">
+function show_submit(){
+
+if (document.getElementById("submit_da").style.display == "none")
+{
+  document.getElementById("termeni_mesaj").innerHTML = "";
+document.getElementById("submit_da").style.display = "inline";
+document.getElementById("submit_da").type = "submit";
+document.getElementById("submit_nu").style.display = "none";
+}else
+{
+document.getElementById("submit_da").style.display = "none";
+document.getElementById("submit_da").type = "button";
+document.getElementById("submit_nu").style.display = "inline"; 
+}
+
+}
+
+function termeni_mesaj(){
+
+document.getElementById("termeni_mesaj").innerHTML = "Trebuie sa bifati pentru a putea continua!";
 
 
+}
+</script>
 <!--
 
   <%= link_to 'Acasa', root_path %><br/>
