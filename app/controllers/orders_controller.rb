@@ -57,6 +57,8 @@ class OrdersController < ApplicationController
 	end
 
 	def create
+    if order_params[:email] != nil && order_params[:telefon]!= nil
+
     if params[:save_details] == '1'
       @user=User.find(order_params[:user_id])
       @user.update(order_params.except(:order_products_attributes,:mesaj,:user_id))
@@ -106,9 +108,14 @@ class OrdersController < ApplicationController
    #end
    
      #if @order.save else render :new
-  	end
+
+   end
+
+  end
 
   def update
+    if current_user.tip == "admin"
+    
     pret = 0
 
     order_params[:order_products_attributes].each do |key, value|
@@ -118,7 +125,7 @@ class OrdersController < ApplicationController
       @product=Product.find(value[:product_id])
       @product.stoc = @product.stoc.to_i - (value[:numar].to_i - @order_product.numar.to_i)
       if @product.save
-      pret = pret + value[:numar].to_i*Product.find(value[:product_id]).pret 
+        pret = pret + value[:numar].to_i*Product.find(value[:product_id]).pret 
       else
         redirect_to :back, alert:'Stoc epuizat!' and return
       end   
@@ -162,15 +169,26 @@ class OrdersController < ApplicationController
 
     end
 
+    end
+
   end
 
 
   def destroy
     # Destroy returns the object (i.e. self); though I believe Mongoid returns a boolean - need to double check this
-    @order.destroy
-    redirect_to :back, notice: 'Comanda anulata'
+    if current_user.tip == "admin"
+     
+     OrderProduct.where(order_id: @order.id).each do |orderproduct|
+      @product = Product.find_by(id: orderproduct.product_id)
+      @product.stoc = @product.stoc.to_i + orderproduct.numar.to_i
+      @product.save
+     end
+
+      @order.destroy
+      redirect_to :back, notice: 'Comanda anulata'
+    end
     #respond_with @order.destroy
-    #sa bag stocul la loc
+    
 	end
 
 private

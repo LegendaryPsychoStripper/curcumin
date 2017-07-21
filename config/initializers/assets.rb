@@ -20,6 +20,7 @@ Rails.application.config.assets.precompile += ["queries_iphone.css"]
 Rails.application.config.assets.precompile += ["queries_samsung.css"]
 Rails.application.config.assets.precompile += ["queries_tablet.css"]
 Rails.application.config.assets.precompile += ["square.css"]
+Rails.application.config.assets.precompile += ["super.css"]
 
 Rails.application.config.assets.precompile += ["carousel.js"]
 Rails.application.config.assets.precompile += ["formular.js"]

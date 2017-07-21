@@ -1,18 +1,15 @@
 <title>Comenzi</title>
 
 <%= render file: 'layouts/header'%>
-<!--
+
 <%= form_tag(orders_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Cauta" %>
+<%= text_field_tag :search, params[:search], placeholder: "Introduceti parametru de cautare" %>
 <%= submit_tag "Cautare" %>
 <% end %>
+<br/>
 <% if @orders.present? %>
-  <%= render @orders %>
-<% else %>
-  <p>Nu exista comenzi care contin termenul <%= params[:search] %>.</p>
-<% end %>
--->
-<% @orders.order('id ASC').each do |order| %>
+
+  <% @orders.order('id ASC').each do |order| %>
 <%=order.nume%> <%=order.prenume%> din <%=order.oras%> a comandat pe <%= order.created_at.strftime("%d.%m.%y la %H:%M") %> in valoare de <%= order.pret %> LEI
 
 <%if current_user.tip =='admin'%>
@@ -28,5 +25,11 @@ Modificata pe <%= order.updated_at.strftime("%d.%m.%y la %H:%M") %>
 <%= link_to 'Factura', order_path(order), target: '_blank' %>
 <br>
 <%end%>
+
+<% else %>
+  <p>Nu exista comenzi care contin termenul <%= params[:search] %>.</p>
+<% end %>
+
+
 
 <%= render file: 'layouts/footer'%>

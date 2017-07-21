@@ -6,10 +6,11 @@ class Order < ApplicationRecord
 	validates :email, :presence => :true, allow_blank: false
 	validates :nume, :presence => :true, allow_blank: false
 	validates :prenume, :presence => :true, allow_blank: false
+	validates :telefon, :presence => :true, allow_blank: false
 	validates :tara, :presence => :true, allow_blank: false
 	#validates :judet, :presence => :true
 	validates :oras, :presence => :true, allow_blank: false
-	
+	validates :adresa, :presence => :true, allow_blank: false
 	#validates :codpostal, :presence => :true
 	#validate :are_pret, on: :create
 	accepts_nested_attributes_for :order_products, allow_destroy: true
@@ -17,11 +18,7 @@ class Order < ApplicationRecord
 
 
 	def self.search(search)
-  		where("nume LIKE ?", "%#{search}%") 
-  		where("prenume LIKE ?", "%#{search}%")
-  		where("email LIKE ?", "%#{search}%")
-  		where("tara LIKE ?", "%#{search}%")
-  		where("oras LIKE ?", "%#{search}%")
+  		where("nume ILIKE ? OR prenume ILIKE ? OR email ILIKE ? OR telefon ILIKE ? OR tara ILIKE ? OR oras ILIKE ? OR adresa ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
 	end
   #def are_pret
   #  if pret == 0 

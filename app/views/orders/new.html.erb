@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Curcumin Shop</title>
+<%= stylesheet_link_tag 'super', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 <%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag 'square', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -233,7 +234,7 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
         <br><br>
         <h1 class= "align-left tc-blue biggest">Parerile clientilor</h1>
               <br><br>
-    <% Message.where(tip: 'parere').each do |mesaj| %>
+    <% Message.where(tip: 'parere').order('id ASC').each do |mesaj| %>
       <%if mesaj.is_validated == 'true' %>
         <p class="align-left medium"><%=mesaj.content%> - <%=mesaj.nume%></p>
     <%end%>
@@ -608,7 +609,7 @@ document.getElementById("order_order_products_attributes_<%=produs.id - 1%>_numa
     <br>
     
     <%end%>
-    <button type="button" class="slim-button" onClick="finalizare()">Verifica comanda</button>
+    <span class="slim-button" onClick="finalizare()">Plaseaza comanda</span>
 
    <div class="modal" id="modal8">
     <div class="longcontent"> 

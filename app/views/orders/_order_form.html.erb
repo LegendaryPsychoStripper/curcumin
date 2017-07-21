@@ -12,7 +12,7 @@
 <% if current_page?(new_order_path) %>
 
 <div style="display: none;">
-<% @products.each do |produs| %>
+<% @products.order('id ASC').each do |produs| %>
   <%= produs.nume%>
   <%= f.fields_for :order_products do |g| %>
   <%= g.number_field :numar, in: 0..100 %>
@@ -23,7 +23,7 @@
 </div>
 <%else%>
 
-<% @products.each do |produs| %>
+<% @products.order('id ASC').each do |produs| %>
   <%= produs.nume%> (stoc:<%=produs.stoc%>)
   <%= f.fields_for :order_products do |g| %>
   <%= g.number_field :numar, in: 0..100 %>
@@ -69,7 +69,7 @@
   <% if current_page?(new_order_path) %>
 
   <div style="display: none;">
-    <% @products.each do |produs| %>
+    <% @products.order('id ASC').each do |produs| %>
     <%= produs.nume%>
     <%= f.fields_for :order_products do |g| %>
     <%= g.number_field :numar, in: 0..100 %>
@@ -80,7 +80,7 @@
 
   <%else%>
 
-    <% @products.each do |produs| %>
+    <% @products.order('id ASC').each do |produs| %>
     <%= produs.nume%> (stoc:<%=produs.stoc%>)
     <%= f.fields_for :order_products do |g| %>
     <%= g.number_field :numar, in: 0..100 %>
@@ -102,7 +102,7 @@
   <% if current_page?(new_order_path) %>
 
   <div style="display: none;">
-    <% @products.each do |produs| %>
+    <% @products.order('id ASC').each do |produs| %>
     <%= produs.nume%>
     <%= f.fields_for :order_products, @order_products.where(product_id: produs.id) do |g| %>
     <%= g.number_field :numar, in: 0..100 %>
@@ -112,7 +112,7 @@
   </div>
 <%else%>
 
-  <% @products.each do |produs| %>
+  <% @products.order('id ASC').each do |produs| %>
     <%= produs.nume%> (stoc:<%=produs.stoc%>)
     <%= f.fields_for :order_products, @order_products.where(product_id: produs.id) do |g| %>
     <%= g.number_field :numar, in: 0..100 %>

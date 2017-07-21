@@ -1,0 +1,173 @@
+/* CSS Document */
+.highlight:hover{
+
+}
+
+.lei::after{
+	content: " LEI";
+}
+
+.tc-grey{
+	color:#d1d1d1;
+}
+
+.tc-white{
+	color: #fff;
+}
+
+.bd-white{
+	border-color: white !important;
+}
+
+.bd-grey{
+	border-color: #d8d8d8 !important;
+}
+
+.link-blue{
+	box-sizing: border-box;
+	font-weight: 500;
+	text-decoration: none;
+	cursor: pointer;
+	color: #4A758E;
+	font-size: 1.5em;
+	padding:25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border:1px solid whitesmoke;
+}
+
+.link-blue:hover{
+	box-sizing: border-box;
+	font-weight: 500;
+	text-decoration: none;
+	cursor: pointer;
+	color: #4A758E;
+	border:1px solid #4A758E;
+	margin: 0;
+	font-size: 1.5em;
+	padding:25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.link-focus-blue{
+	box-sizing: border-box;
+	font-weight: 500;
+	text-decoration: none;
+	cursor: pointer;
+	color:#4A758E;
+	border:1px solid #4A758E;
+	margin: 0;
+	font-size: 1.5em;
+	padding:25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+.link-focus-blue:hover{
+	box-sizing: border-box;
+	font-weight: 500;
+	text-decoration: none;
+	cursor: pointer;
+	color:#4A758E;
+	border:1px solid #4A758E;
+	margin: 0;
+	font-size: 1.5em;
+	padding:25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+
+.slim-contour2{
+	border: 1px solid;
+	line-height: 2;
+	font-size: 1em;
+	font-weight: 300;
+	text-align: center;
+	height: auto;
+	width: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+
+.slim-button2{
+	border: 1px solid;
+	line-height: 1;
+	font-size: 1em;
+	font-weight: 300;
+	text-align: center;
+	height: auto;
+	width: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 7%;
+	padding-right: 7%;
+	display: inline-block;
+	color: #fff;
+}
+.slim-button2:hover{
+	background-color: #4A758E;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.round {
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-radius: 5px; 
+
+  /* Firefox 1-3.6 */
+  -moz-border-radius: 5px; 
+  
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: 5px; 
+}
+
+.submit-button{
+	background: none repeat scroll 0 0 transparent;
+    border: 1px solid white;
+    border-spacing: 0;
+    line-height: 1.42rem;
+    list-style: none outside none;
+    text-decoration: none;
+    text-indent: 0;
+    cursor: pointer;
+	width: 100%;
+	font-size: 1.5em;
+	display: inline-block;
+	margin: 0;
+	padding: 5px;
+	padding-left: 30px;
+	
+	background-color: none;
+	font-weight: 100;
+	color: #fff;
+
+}
+
+.submit-button:hover{
+	background: none repeat scroll 0 0 transparent;
+    border: 1px solid white;
+    border-spacing: 0;
+    line-height: 1.42rem;
+    list-style: none outside none;
+    text-decoration: none;
+    text-indent: 0;
+	
+	width: 100%;
+	font-size: 1.5em;
+	display: inline-block;
+	margin: 0;
+	padding: 5px;
+	padding-left: 30px;
+	background-color: #4A758E;
+	border: 1px solid white;
+	font-weight: 100;
+	color: #fff;
+	
+
+}
