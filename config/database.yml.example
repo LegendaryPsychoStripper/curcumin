@@ -86,4 +86,4 @@ production:
   <<: *default
   database: curcumin_production
   username: curcumin
-  password: <%= ENV['PROIECTIP_DATABASE_PASSWORD'] %>
+  password: curcumin
