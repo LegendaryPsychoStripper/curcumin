@@ -39,9 +39,17 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
-#group :development do
- gem "capistrano", "~> 3.8"
-#end
+group :development do
+  gem 'capistrano', '3.5.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-nginx'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails'
+  gem 'capistrano-rails-db'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-upload-config'
+  gem 'sshkit-sudo'
+end
 
 gem 'devise' #https://github.com/plataformatec/devise
 
