@@ -8,5 +8,5 @@
 # makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
 GMAIL_USERNAME: 'curcumin.mailer@gmail.com'
 GMAIL_PASSWORD: 'parolaparola'
-APP_ID: ''
-APP_SECRET: ''
+APP_ID: 'eda12bc8b7286238635c1ef5c44267492257f811'
+APP_SECRET: 'fb941dfe3881d681ef0a54d4ec53254719bc7f242e0e6bbf9b759deb5e9d679bdd51fc17d851b79f3b9564a015106e8d90729a9d8f36a7132b6d0394e28ac1a9'

@@ -1,14 +1,14 @@
 <%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+<div style="background: rgba(0, 0, 0, 0.95);">
 <h2>Schimbă parola</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <!--<%= devise_error_messages! %>-->
   <%= f.hidden_field :reset_password_token %>
-<div style="background: rgba(0, 0, 0, 0.95);">
+
   <div class="field">
     
-    <%= f.password_field :password, placeholder: "Noua parola", autocomplete: "off" %>
+    <%= f.password_field :password, placeholder: "Noua parola(minim 6 charactere)", autocomplete: "off" %>
     <!--<% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> caractere minimum)</em>
     <% end %>-->
