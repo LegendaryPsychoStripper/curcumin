@@ -290,20 +290,21 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
   </div>
   
      <div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin" style="display: inline-block !important; height: 10% !important;">
-      <img src="<%=request.base_url %>/assets/icons/1492628996_menu.png" class="translucent link-focus" style="height: 85%; margin:5px; position: relative; padding: 0; float: left;" onClick="show_modal('modal_menu')">
+     <%= image_tag ("icons/1492628996_menu.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; position: relative; padding: 0; float: left;", onclick: "show_modal('modal_menu')"%>
+
       <!--<img src="<%=request.base_url %>/assets/icons/1492629013_mail.png" class="translucent link-focus" style="height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" >-->
 
 
-
-      <img src="<%=request.base_url %>/assets/icons/1492629028_cart.png" class="translucent link-focus" style="height: 85%; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" >
+      <%= image_tag ("icons/1492629028_cart.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; position: relative; padding: 0; float: right; margin-right: 20px;", onclick: "show_modal('modal_menu')"%>
       
       <% if user_signed_in? %>
             <a>
-              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 85%; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_edit')"><span style="color:green; font-size:0.8em; margin-top: 2%; float: right;">on-line</span>
+            <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;", onclick: "show_modal('modal_edit')" %>
+              <span style="color:green; font-size:0.8em; margin-top: 2%; float: right;">on-line</span>
               </a>
               <%else%>
-            
-              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 85%; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_login')">
+
+              <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;", onclick: "show_modal('modal_login')" %>
             
       <% end %>
     </div>
@@ -550,7 +551,11 @@ document.getElementById("order_order_products_attributes_<%=produs.id - 1%>_numa
           </div>
           <%end%>
           <a class="slim-button tc-blue nobackground normal slim" type="button" id="modal1_open" onClick="show_modal('modal6')" style="position: relative; float: left; clear: both;">Observatii si Contraindicatii</a>
-          <!--<a class="slim-button tc-blue nobackground normal slim" type="button" id="modal1_open" onClick="show_modal('modal7')" style="position: relative; float: center; clear: both;">Parerile clientilor</a>
+          <!--
+            image_tag sau dai enable static_assets
+
+
+          <a class="slim-button tc-blue nobackground normal slim" type="button" id="modal1_open" onClick="show_modal('modal7')" style="position: relative; float: center; clear: both;">Parerile clientilor</a>
             <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;"> 
           <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">
           <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">

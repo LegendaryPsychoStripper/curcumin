@@ -1379,24 +1379,26 @@ Datorita rezultatelor sale deosebite, BIOPERINE este produsul cel mai des folosi
 
 
     <div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin">
-      <img src="<%=request.base_url%>/assets/icons/1492628996_menu.png" class="translucent link-focus" style="height: 30px; margin:5px; position: relative; padding: 0; float: left;" onClick="show_modal('modal_menu')">
+    <%= image_tag ("icons/1492628996_menu.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; position: relative; padding: 0; float: left;", onclick: "show_modal('modal_menu')" %>
       
-      <a href="mailto:comenzi@curcumin95.ro"><img src="<%=request.base_url%>/assets/icons/1492629013_mail.png" class="translucent link-focus" style="height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" ></a>
+      
+      <a href="mailto:comenzi@curcumin95.ro"><%= image_tag ("icons//1492629013_mail.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;"%></a>
       <a class="float-right" href="orders/new">
-        <img src="<%=request.base_url%>/assets/icons/1492629028_cart.png" class="translucent link-focus" style="height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" >
+      <%= image_tag ("icons/1492629028_cart.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" %>
       </a>
       
      <% if user_signed_in? %>
             <a class="float-right">
-              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_edit')"><p style="color:green; font-size:0.8em;">on-line</p></a>
+            <%= image_tag ("1492812098_avatar.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;", onclick: "show_modal('modal_edit')"%>
+              <p style="color:green; font-size:0.8em;">on-line</p></a>
               <%else%>
             <a class="float-right">
-              <img src="<%=request.base_url %>/assets/icons/1492812098_avatar.png" class="translucent link-focus" style="height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;" onClick="show_modal('modal_login')">
+            <%= image_tag ("1492812098_avatar.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;", onclick: "show_modal('modal_login')"%>
             </a>
       <% end %>
       
       
-    <a href="tel:+40 725 013 399"><img src="<%=request.base_url%>/assets/icons/Phone-50.png" class="translucent link-focus" style="height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" ></a>
+    <a href="tel:+40 725 013 399"><%= image_tag ("icons/Phone-50.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" %></a>
     </div>
     
     <div id="section_one" class="section_full">
@@ -1418,14 +1420,16 @@ Datorita rezultatelor sale deosebite, BIOPERINE este produsul cel mai des folosi
     </script>
             
             <a class="float-right" href="orders/new">
-              <img src="<%=request.base_url%>/assets/icons/1492629028_cart.png" class="icon translucent contained position-v-middle">
+            <%= image_tag ("icons/1492629028_cart.png"), class: "icon translucent contained position-v-middle" %>
+              
             </a>
              <% if user_signed_in? %>
             <a class="float-right">
-              <img src="<%=request.base_url%>/assets/icons/1492812098_avatar.png" class="icon translucent contained position-v-middle" onClick="show_modal('modal_edit')"><p style="color:white; font-size:0.8em;">on-line</p></a>
+            <%= image_tag ("icons/1492812098_avatar.png"), class: "icon translucent contained position-v-middle", onclick: "show_modal('modal_edit')"%>
+              <p style="color:white; font-size:0.8em;">on-line</p></a>
               <%else%>
             <a class="float-right">
-              <img src="<%=request.base_url%>/assets/icons/1492812098_avatar.png" class="icon translucent contained position-v-middle" onClick="show_modal('modal_login')">
+            <%= image_tag ("icons/1492812098_avatar.png"), class: "icon translucent contained position-v-middle", onclick: "show_modal('modal_login')"%>
             </a>
             <% end %>
       </div>
@@ -1433,7 +1437,7 @@ Datorita rezultatelor sale deosebite, BIOPERINE este produsul cel mai des folosi
       <div class="padder-10"></div>
         <div class="square position-middle bd-grey-light">
           <div class="content">
-            <img class="position-middle absolute-v-middle contained padding-10" src="<%=request.base_url%>/assets/Logo_Curcumin_lg_tr_w.png"/>
+          <%= image_tag ("Logo_Curcumin_lg_tr_w.png"), class: "position-middle absolute-v-middle contained padding-10" %>
           </div>
         </div>
         <div class="padder-2-5"></div>
@@ -1444,23 +1448,26 @@ Datorita rezultatelor sale deosebite, BIOPERINE este produsul cel mai des folosi
    
    <div class="container-fluid container-responsive nomargin nopadding" style="max-width: 1200px; ">
         <div style="width:25%; float: left;">
-            
-          <img src="<%=request.base_url%>/assets/icons/icon_fb.png" class="icon">
+            <%= image_tag ("icons/icon_fb.png"), class: "icon"%>
+
           <p class="tc-grey-light medium" style="font-size: 1em;"><b id="likes"></b><br>
 fani pe facebook</p><!-- fani facebook -->
         </div>
         <div style="width:25%; float: left;">
-          <img src="<%=request.base_url%>/assets/icons/icon_clienti.png" class="icon">
+        <%= image_tag ("icons/icon_clienti.png"), class: "icon"%>
+          
           <p class="tc-grey-light medium"  style="font-size: 1em;"><b><%= Order.where(user_id: nil).count + Order.where('user_id IS NOT NULL').pluck('DISTINCT user_id').count + 3675 %></b><br>
 cumparatori de curcumin</p> 
         </div>
         <div style="width:25%; float: left;">
-          <img class="icon" src="<%=request.base_url%>/assets/icons/icon_ramburs.png">
+        <%= image_tag ("icons/icon_ramburs.png"), class: "icon"%>
+          
           <p class="tc-grey-light medium"  style="font-size: 1em;"><b>100%</b><br>
 banii inapoi</p>
         </div>
         <div style="width:25%; float: left;">
-          <img class="icon" src="<%=request.base_url%>/assets/icons/icon_recomandari.png">
+        <%= image_tag ("icons/icon_recomandari.png"), class: "icon"%>
+          
           <p class="tc-grey-light medium"  style="font-size: 1em;"><b>90%</b><br>recomandari</p>
         </div>
       </div>
@@ -1838,7 +1845,8 @@ banii inapoi</p>
           <div class="container-half">
             <div class="square position-middle bd-grey">
           <div class="content">
-            <img class="position-middle absolute-v-middle contained padding-10" src="<%=request.base_url%>/assets/Logo_Curcumin_lg_tr_g.png"/>
+            <%= image_tag ("Logo_Curcumin_lg_tr_g.png"), class: "position-middle absolute-v-middle contained padding-10"%>
+            
           </div>
         </div>
           </div>
