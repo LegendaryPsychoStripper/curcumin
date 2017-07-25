@@ -85,5 +85,5 @@ test:
 production:
   <<: *default
   database: curcumin_production
-  username: 
-  password: 
+  username: deployer
+  password: parola
