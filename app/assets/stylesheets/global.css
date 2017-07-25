@@ -57,7 +57,7 @@ html,body{
 	display: none;
 }
 #background-three{
-	background: url("https://curcumin95.herokuapp.com/assets/stiinta_detoxifiere_curcumin95_bioperine_md.jpg") no-repeat right center scroll; 
+	background: url("http://89.35.238.250/assets/stiinta_detoxifiere_curcumin95_bioperine_md.jpg") no-repeat right center scroll; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
@@ -65,7 +65,7 @@ html,body{
 	background-position: top center;
 }
 #background-four{
-	background: url("https://curcumin95.herokuapp.com/assets/beneficii_curcumin95_bioperine_xs.jpg") no-repeat right center scroll; 
+	background: url("http://89.35.238.250/assets/beneficii_curcumin95_bioperine_xs.jpg") no-repeat right center scroll; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
@@ -73,7 +73,7 @@ html,body{
 	background-position: top center;
 }
 #background-five{
-	background: url("https://curcumin95.herokuapp.com/assets/detoxifiere_curcumin95_bioperine_xs.jpg") no-repeat right center scroll; 
+	background: url("http://89.35.238.250/assets/detoxifiere_curcumin95_bioperine_xs.jpg") no-repeat right center scroll; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
@@ -81,7 +81,7 @@ html,body{
 	background-position: top center;
 }
 #background-six{
-	background: url("https://curcumin95.herokuapp.com/assets/stiinta_detoxifiere_tratament_artrita_curcumin95_bioperine_xs.jpg") no-repeat right center scroll; 
+	background: url("http://89.35.238.250/assets/stiinta_detoxifiere_tratament_artrita_curcumin95_bioperine_xs.jpg") no-repeat right center scroll; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
@@ -89,7 +89,7 @@ html,body{
 	background-position: top center;
 }
 #background-seven{
-	background: url("https://curcumin95.herokuapp.com/assets/cumpara_antioxidant_antiinflamator_curcumin95_bioperine_xs.jpg") no-repeat right center scroll; 
+	background: url("http://89.35.238.250/assets/cumpara_antioxidant_antiinflamator_curcumin95_bioperine_xs.jpg") no-repeat right center scroll; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
@@ -97,7 +97,7 @@ html,body{
 	background-position: top center;
 }
 #background-eight{
-	background: url("https://curcumin95.herokuapp.com/assets/pexels-photo-88636_xs.jpg") no-repeat right center scroll; 
+	background: url("http://89.35.238.250/assets/pexels-photo-88636_xs.jpg") no-repeat right center scroll; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
@@ -119,7 +119,7 @@ html,body{
 	top:0;
 	bottom: 0;
 	margin: auto;
-	background: url("https://curcumin95.herokuapp.com/assets/flacon.png") no-repeat right center scroll; 
+	background: url("http://89.35.238.250/assets/flacon.png") no-repeat right center scroll; 
   		-webkit-background-size: contain;
   		-moz-background-size: contain;
   		-o-background-size: contain;
@@ -583,12 +583,12 @@ a:hover, a:visited, a:link, a:active{
 	display: inline-block;
 	position: absolute;
 	top:0;bottom: 0;left: 0;right: 0;
-	background: url("https://curcumin95.herokuapp.com/assets/flacon.png") no-repeat center center;
+	background: url("http://89.35.238.250/assets/flacon.png") no-repeat center center;
 	background-size: auto 70%;
 	background-position: center center;
 }
 #section_three{
-	background: url("https://curcumin95.herokuapp.com/assets/stiinta_detoxifiere_curcumin95_bioperine_md.jpg") no-repeat right center fixed; 
+	background: url("http://89.35.238.250/assets/stiinta_detoxifiere_curcumin95_bioperine_md.jpg") no-repeat right center fixed; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
@@ -768,7 +768,7 @@ a:hover, a:visited, a:link, a:active{
 
 
 .navigation-left{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/left.png") no-repeat center center; 
+	background: url("http://89.35.238.250/assets/icons/left.png") no-repeat center center; 
 	background-size: contain;
 	content: '';
 	width: 4vw;
@@ -780,7 +780,7 @@ a:hover, a:visited, a:link, a:active{
 	filter: opacity(50);
 }
 .navigation-right{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/right.png") no-repeat center center; 
+	background: url("http://89.35.238.250/assets/icons/right.png") no-repeat center center; 
 	background-size: contain;
 	content: '';
 	width: 4vw;
@@ -815,7 +815,7 @@ a:hover, a:visited, a:link, a:active{
 	display: inline-block;
 }
 .navvigation::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/left.png") no-repeat center center; 
+	background: url("http://89.35.238.250/assets/icons/left.png") no-repeat center center; 
 	background-size: contain;
 	content: '';
 	width: 4vw;
@@ -827,7 +827,7 @@ a:hover, a:visited, a:link, a:active{
 	filter: opacity(50);
 }
 .navvigation::after{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/right.png") no-repeat center center; 
+	background: url("http://89.35.238.250/assets/icons/right.png") no-repeat center center; 
 	background-size: contain;
 	content: '';
 	width: 4vw;
@@ -843,7 +843,7 @@ a:hover, a:visited, a:link, a:active{
 	display: inline-block;
 }
 .node-l-t::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/arrow-top-left.png") no-repeat center center;
+	background: url("http://89.35.238.250/assets/icons/arrow-top-left.png") no-repeat center center;
 	background-size: contain;
 	background-position: left center;
 	content: '';
@@ -858,7 +858,7 @@ a:hover, a:visited, a:link, a:active{
 	z-index: -0;
 }
 .node-l-c::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/arrow-middle-left.png") no-repeat center center;
+	background: url("http://89.35.238.250/assets/icons/arrow-middle-left.png") no-repeat center center;
 	background-size: contain;
 	background-position: left center;
 	content: '';
@@ -873,7 +873,7 @@ a:hover, a:visited, a:link, a:active{
 	z-index: -0;
 }
 .node-l-b::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/arrow-bottom-left.png") no-repeat center center;
+	background: url("http://89.35.238.250/assets/icons/arrow-bottom-left.png") no-repeat center center;
 	background-size: contain;
 	background-position: left center;
 	content: '';
@@ -888,7 +888,7 @@ a:hover, a:visited, a:link, a:active{
 	z-index: -0;
 }
 .node-r-t::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/arrow-top-right.png") no-repeat center center;
+	background: url("http://89.35.238.250/assets/icons/arrow-top-right.png") no-repeat center center;
 	background-size: contain;
 	background-position: right center;
 	content: '';
@@ -903,7 +903,7 @@ a:hover, a:visited, a:link, a:active{
 	z-index: -0;
 }
 .node-r-c::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/arrow-middle-right.png") no-repeat center center;
+	background: url("http://89.35.238.250/assets/icons/arrow-middle-right.png") no-repeat center center;
 	background-size: contain;
 	background-position: right center;
 	content: '';
@@ -918,7 +918,7 @@ a:hover, a:visited, a:link, a:active{
 	z-index: -0;
 }
 .node-r-b::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/arrow-bottom-right.png") no-repeat center center;
+	background: url("http://89.35.238.250/assets/icons/arrow-bottom-right.png") no-repeat center center;
 	background-size: contain;
 	background-position: right center;
 	content: '';
@@ -959,7 +959,7 @@ a:hover, a:visited, a:link, a:active{
 }
 
 #section_one{
-	background: url("https://curcumin95.herokuapp.com/assets/antioxidant_antiinflamator_curcumin95_bioperine_md.jpg") no-repeat top center fixed; 
+	background: url("http://89.35.238.250/assets/antioxidant_antiinflamator_curcumin95_bioperine_md.jpg") no-repeat top center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -974,7 +974,7 @@ a:hover, a:visited, a:link, a:active{
 
 }
 #section_four{
-	background: url("https://curcumin95.herokuapp.com/assets/beneficii_curcumin95_bioperine_md.jpg") no-repeat center center fixed; 
+	background: url("http://89.35.238.250/assets/beneficii_curcumin95_bioperine_md.jpg") no-repeat center center fixed; 
 	background-attachment: fixed !important;
   -webkit-background-attachment: cover;
   -moz-background-attachment: cover;
@@ -986,7 +986,7 @@ a:hover, a:visited, a:link, a:active{
 	padding-top: 5vh;
 }
 #section_five{
-	background: url("https://curcumin95.herokuapp.com/assets/detoxifiere_curcumin95_bioperine_md.jpg") no-repeat center center fixed; 
+	background: url("http://89.35.238.250/assets/detoxifiere_curcumin95_bioperine_md.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -998,7 +998,7 @@ a:hover, a:visited, a:link, a:active{
   -o-background-attachment: cover;
 }
 #section_six{
-	background: url("https://curcumin95.herokuapp.com/assets/stiinta_detoxifiere_tratament_artrita_curcumin95_bioperine_md.jpg") no-repeat center center fixed; 
+	background: url("http://89.35.238.250/assets/stiinta_detoxifiere_tratament_artrita_curcumin95_bioperine_md.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1010,7 +1010,7 @@ a:hover, a:visited, a:link, a:active{
   -o-background-attachment: cover;
 }
 #section_seven{
-	background: url("https://curcumin95.herokuapp.com/assets/cumpara_antioxidant_antiinflamator_curcumin95_bioperine_md.jpg") no-repeat center center fixed; 
+	background: url("http://89.35.238.250/assets/cumpara_antioxidant_antiinflamator_curcumin95_bioperine_md.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1022,7 +1022,7 @@ a:hover, a:visited, a:link, a:active{
   -o-background-attachment: cover;
 }
 #section_eight{
-	background-image:  url('https://curcumin95.herokuapp.com/assets/pexels-photo-88636.jpg');
+	background-image:  url('http://89.35.238.250/assets/pexels-photo-88636.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -1159,17 +1159,17 @@ a[href^="mailto"]{
 	margin: auto;
 }
 .email::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/1492628761__email.png") no-repeat center center; 
+	background: url("http://89.35.238.250/assets/icons/1492628761__email.png") no-repeat center center; 
 	background-size: contain;
 	content: '';
 }
 .phone::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/1492628712__viber.png") no-repeat center center; 
+	background: url("http://89.35.238.250/assets/icons/1492628712__viber.png") no-repeat center center; 
 	background-size: contain;
 	content: '';
 }
 .address::before{
-	background: url("https://curcumin95.herokuapp.com/assets/icons/1492628644__location.png") no-repeat center center; 
+	background: url("http://89.35.238.250/assets/icons/1492628644__location.png") no-repeat center center; 
 	background-size: contain;
 	content: '';
 }
@@ -1182,7 +1182,7 @@ margin-left:80px;
 	text-align: left;
 }
 .telefon::before {
-    background:url(https://curcumin95.herokuapp.com/assets/icons/1492628712__viber.png);
+    background:url(http://89.35.238.250/assets/icons/1492628712__viber.png);
     content:"";
     display:inline-block;
     height:40px;
@@ -1204,7 +1204,7 @@ margin-left:80px;
 	text-align: left;
 }
 .email::before {
-    background:url(https://curcumin95.herokuapp.com/assets/icons/1492628761__email.png);
+    background:url(http://89.35.238.250/assets/icons/1492628761__email.png);
     content:"";
     display:inline-block;
     height:40px;
@@ -1229,7 +1229,7 @@ margin-left:80px;
 	text-align: left;
 }
 .locatie::before {
-    background:url(https://curcumin95.herokuapp.com/assets/icons/1492628644__location.png);
+    background:url(http://89.35.238.250/assets/icons/1492628644__location.png);
     content:"";
     display:inline-block;
     height:40px;
@@ -1297,7 +1297,7 @@ margin-left:80px;
 		max-width: 700px !important;
     }
 	.container-35-50::before{
-		background: url("https://curcumin95.herokuapp.com/assets/flacon_left.png") no-repeat center center;
+		background: url("http://89.35.238.250/assets/flacon_left.png") no-repeat center center;
 		background-size:contain;
 		background-position: right center;
 		content: '';
@@ -1312,7 +1312,7 @@ margin-left:80px;
 		z-index: -0;
 	}
 	.container-35-50::after{
-		background: url("https://curcumin95.herokuapp.com/assets/flacon_right.png") no-repeat center center;
+		background: url("http://89.35.238.250/assets/flacon_right.png") no-repeat center center;
 		background-size:contain;
 		background-position: left center;
 		content: '';
@@ -1380,7 +1380,7 @@ margin-left:30px;
 		font-size: 1em;
 }
 .telefon::before {
-    background:url(https://curcumin95.herokuapp.com/assets/icons/1492628712__viber.png);
+    background:url(http://89.35.238.250/assets/icons/1492628712__viber.png);
     content:"";
     display:inline-block;
     height:20px;
@@ -1403,7 +1403,7 @@ margin-left:30px;
 	font-size: 1em;
 }
 .email::before {
-    background:url(https://curcumin95.herokuapp.com/assets/icons/1492628761__email.png);
+    background:url(http://89.35.238.250/assets/icons/1492628761__email.png);
     content:"";
     display:inline-block;
     height:20px;
@@ -1429,7 +1429,7 @@ margin-left:30px;
 	font-size: 1em;
 }
 .locatie::before {
-    background:url(https://curcumin95.herokuapp.com/assets/icons/1492628644__location.png);
+    background:url(http://89.35.238.250/assets/icons/1492628644__location.png);
     content:"";
     display:inline-block;
     height:20px;
