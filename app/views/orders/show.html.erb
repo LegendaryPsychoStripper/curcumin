@@ -20,7 +20,7 @@ Membru: <%if @order.user_id != nil %> da <%else%> nu <%end%><br/>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Factura Proforma nr.<%= sprintf '%05d', @order.id %></title>
+    <title>Factura Proforma nr.<% if @order.factura_id != nil %><%= sprintf '%05d', @order.factura_id %><%end%></title>
     
     <style>
     .invoice-box{
@@ -139,8 +139,8 @@ table tr td.numar::before {
                                 
                             </td>
                             
-                            <td>
-                                Factura Proforma nr. <%= sprintf '%05d', @order.id %><br>
+                            <td>                        
+                                Factura Proforma nr.<% if @order.factura_id != nil %> <%= sprintf '%05d', @order.factura_id %><%end%><br>
                                 Data: <%= @order.created_at.strftime("%d.%m.%y")%><br>
                                 <br>
                                 <strong style="font-size: 1.5em;">Total: <%= number_with_precision(@order.pret, strip_insignificant_zeros: true) %> LEI</strong>

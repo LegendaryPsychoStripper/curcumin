@@ -1,6 +1,7 @@
 class CreateOrders < ActiveRecord::Migration[5.0]
   def change
-    create_table :orders do |t|
+    create_table :orders, id: :uuid do |t|
+    #    t.bigserial :factura_id 
     	t.string :nume
         t.integer :user_id
     	t.string :prenume
@@ -15,6 +16,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
     	t.text :mesaj
         t.string :stare
         t.string :transport
+
       t.timestamps
     end
   end
