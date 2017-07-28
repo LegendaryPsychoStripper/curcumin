@@ -1,47 +1,80 @@
-<head>
 
-
-<%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-<%= stylesheet_link_tag 'queries_iphone', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'queries_samsung', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'queries_tablet', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-<%= javascript_include_tag 'modalJss', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'cssmodal', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'desktopcss', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-<%= stylesheet_link_tag 'super', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'mihai', media: 'all', 'data-turbolinks-track': 'reload' %>
-</head>
-
-<div id="section_ten" class="section_full tc-blue shadow-bottom" style="background-color: whitesmoke; ">
-      <div id="menu_desktop" class="shadow-bottom"  style="background-color: whitesmoke;">
+      <div class="modal" id="modal_menu" style="background: rgba(0, 0, 0, 0.95);">
+    <div class="longcontent tc-grey-light" style="background-color: transparent;">
+        <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_menu');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         
-            <a class="float-left link-focus-blue" style="margin-top: 10px; margin-left: 20px; display: inline-block;" href="<%=request.base_url%>" >
+        <div class="container-responsive max600 align-left">
+            <h1 class="align-left capital">CURCUMIN95</h1>
+            
+            <h2 class="capital align-left" style="clear:both">&amp; Bioperine</h2>
+
+            <a class="tc-grey-light link  float-left thin" style="clear:both" href="<%=request.base_url%>" onClick="hide_modal('modal_menu');">
+              Acasa
+            </a><br><br><br>
+            <% if user_signed_in? && current_user.tip == "admin" %>
+            <a class="tc-grey-light link  float-left thin" style="clear:both" href="<%=request.base_url%>/orders" onClick="hide_modal('modal_menu');">
+              Vizualizeaza comenzi
+            </a><br><br><br>
+            <%end%>
+          <a class="tc-grey-light link float-left thin" style="clear:both" href="<%=request.base_url%>">Stiinta</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" href="<%=request.base_url%>">Beneficii</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" onClick="hide_modal('modal_menu'); show_modal('modal_medic');">Intreaba medicul</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" href="<%=request.base_url%>">Contact</a><br><br><br>
+          
+          
+        </div>
+        <p></p>
+       
+        
+    </div>
+  </div>
+  <div id="menu_desktop" class="bg-grey-light shadow-bottom-nomargin">
+    <%= image_tag ("icons/1492628996_menu.png"), class: "translucent link-focus", style: "height: 40px; margin:5px; position: relative; padding: 0; float: left;", onclick: "show_modal('modal_menu')" %>
+      
+      
+     <% if user_signed_in? %>
+            <img src="http://89.35.238.250/assets/icons/1492812098_avatar_signed.png" class="translucent link-focus" style="height: 40px; margin:5px; position: relative; padding: 0; float: right;" onclick="show_modal('modal_edit')"/>
+            
+              
+              <%else%>
+
+              <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent link-focus", style: "height: 40px; margin:5px; position: relative; padding: 0; float: right;", onclick: "show_modal('modal_login')" %>
+            
+      <% end %>
+      <a class="float-left link-focus-blue" style="height: 25px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: left; font-size:16px; line-height:25px; padding-left:50px; padding-right:50px; margin-top:12px;" href="<%=request.base_url%>" >
               Acasa
             </a>
-            <% if user_signed_in? && current_user.tip == "admin" && !current_page?(orders_path)  %>
-            <a class="float-left link-focus-blue" style="margin-top: 10px; margin-left: 20px; display: inline-block;" href="<%=request.base_url%>/orders" >
-              Vizualizeaza comenzi
-            </a>
-            <% end %>
-            <a class="float-right" href="<%=request.base_url %>/orders/new">
-            <%= image_tag ("icons/1492629028_cart.png"), class: "icon translucent contained position-v-middle" %>
+       
+
+      
+      
+    
+    </div>
+  	<div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin">
+    <%= image_tag ("icons/1492628996_menu.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; position: relative; padding: 0; float: left;", onclick: "show_modal('modal_menu')" %>
+      <% if user_signed_in? %>
+            <img src="http://89.35.238.250/assets/icons/1492812098_avatar_signed.png" class="translucent link-focus" style="height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;" onclick="show_modal('modal_edit')"/>
+            
               
-            </a>
-           <% if user_signed_in? %>
-            <a class="float-right">
-            <%= image_tag ("icons/1492812098_avatar.png"), class: "icon translucent contained position-v-middle", onclick: "show_modal('modal_edit')" %>
-              <p style="color:green; font-size:0.8em;">on-line</p></a>
               <%else%>
-            <a class="float-right">
-            <%= image_tag ("icons/1492812098_avatar.png"), class: "icon translucent contained position-v-middle", onclick: "show_modal('modal_login')" %>
-              
+
+              <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;", onclick: "show_modal('modal_login')" %>
+            
+      <% end %>
+      <a href="mailto:comenzi@curcumin95.ro"><%= image_tag ("icons//1492629013_mail.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;"%></a>
+
+      <a href="tel:+40 725 013 399"><%= image_tag ("icons/Phone-50.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" %></a>
+      <a class="translucent link-focus" style="height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;" href="<%=request.base_url%>" >
+              Acasa
             </a>
-            <% end %>
-      </div>
-</div>
+     
+
+      
+      
+    
+    </div>
+
+     
 
 <div class="modal" id="modal_login"><!--render de sign in-->
     <div class="longcontent tc-grey-light" style="background-color: transparent;">

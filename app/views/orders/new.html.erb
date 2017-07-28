@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Curcumin Shop</title>
+<%= javascript_include_tag 'carousel', 'data-turbolinks-track': 'reload' %>
 
 <%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag 'square', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,16 +11,18 @@
 <%= stylesheet_link_tag 'queries_iphone', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag 'queries_samsung', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag 'queries_tablet', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'carousel', 'data-turbolinks-track': 'reload' %>
+
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <%= javascript_include_tag 'modalJss', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'cssmodal', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'desktopcss', media: 'all', 'data-turbolinks-track': 'reload' %>
+
 <%= javascript_include_tag 'formular', 'data-turbolinks-track': 'reload' %>
 
+<%= stylesheet_link_tag 'cssmodal', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'desktopcss', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag 'super', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag 'mihai', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -106,21 +109,24 @@ if (parseFloat(document.getElementById('totalfinal').innerHTML) == transport)
 
 </script>
 
+
+
 </head>
 
-<body>
+<body style="" onload="js_Load()">
 <!--
 <% flash.each do |name, msg| %>
     <%= content_tag :div, msg %>
 <% end %> 
 -->
+
 <div class="modal" id="modal_notice" style="z-index:6000;">
     <div class="longcontent">
        
       <% if notice == 'Multumim!' || notice == 'Multumim!medic'%>
         Mesajul a fost transmis cu success!
        
-       <%elsif notice == 'Verifica datele introduse!medic'%>
+       <%elsif notice == 'Verifica datele introduse!medic' || notice =='Verifica datele introduse!'%>
        Verifica datele introduse!
        
        <%elsif notice == 'Date invalide!' || notice == 'Date invalide!control'%>
@@ -137,8 +143,13 @@ if (parseFloat(document.getElementById('totalfinal').innerHTML) == transport)
 
        <%elsif notice == "Instructiunile au fost trimise pe e-mail!"%>
        Instructiunile au fost trimise pe e-mail!
+
+        <%elsif notice == "La revedere! Contul tau a fost anulat cu succes."%>
+       La revedere! Contul tau a fost anulat cu succes. Sper sa ne revedem curand.
+       
        
        <%end%>
+
     </div>
   </div>
 
@@ -160,11 +171,10 @@ if (parseFloat(document.getElementById('totalfinal').innerHTML) == transport)
               Vizualizeaza comenzi
             </a><br><br><br>
             <%end%>
-            <a class="tc-grey-light link link-focus float-left thin" style="clear:both">Comanda</a><br><br><br>
-          <a class="tc-grey-light link float-left thin" style="clear:both">Stiinta</a><br><br><br>
-          <a class="tc-grey-light link float-left thin" style="clear:both">Beneficii</a><br><br><br>
-          <a class="tc-grey-light link float-left thin" style="clear:both">Intreaba medicul</a><br><br><br>
-          <a class="tc-grey-light link float-left thin" style="clear:both">Contact</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" href="http://89.35.238.250/#section_three" data-turbolinks="false">Stiinta</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" href="<%=request.base_url%>/#section_four" data-turbolinks="false">Beneficii</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" onClick="hide_modal('modal_menu'); show_modal('modal_medic');">Intreaba medicul</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" href="<%=request.base_url%>/#contact_left" data-turbolinks="false">Contact</a><br><br><br>
           
           
         </div>
@@ -206,8 +216,7 @@ if (parseFloat(document.getElementById('totalfinal').innerHTML) == transport)
         <div id="modal1_close" class="float-right slim-button small tc-black-light" onClick="hide_modal('modal6');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         <br><br>
         <h1 class= "align-left tc-blue biggest">Observatii</h1>
-      <p class="align-left medium">                          Acesta este un supliment alimentar si nu înlocuieste o dietă variată şi echilibrată şi un mod de viață sănătos. A nu se lăsa la îndemâna şi la vederea copiilor mici. Capsulele au aromă şi miros neutre, obținute 100% din surse de plante, potrivite pentru vegetarieni. Daca observatii reactii neplacute, adresati-va medicului personal sau prin intermediul rubricii noastre “intreaba” medicul. 
-                                                                                                               
+      <p class="align-left small thin">Acesta este un supliment alimentar si nu înlocuieste o dietă variată şi echilibrată şi un mod de viață sănătos. A nu se lăsa la îndemâna şi la vederea copiilor mici. Capsulele au aromă şi miros neutre, obținute 100% din surse de plante, potrivite pentru vegetarieni. Daca observatii reactii neplacute, adresati-va medicului personal sau prin intermediul rubricii noastre “intreaba” medicul. 
     </p>                     
 <br>
  <h2 class="tc-blue align-left huge">Contraindicatii</h2>
@@ -252,6 +261,29 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
   </div>
 
 
+<div class="modal" id="modal_medic"  style="background: rgba(0, 0, 0, 0.95);">
+    <div class="longcontent tc-grey-light" style="background-color: transparent;">
+        <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_medic');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
+        
+        <div class="container-responsive max600">
+            <h1 class="align-left capital">Intreaba medicul</h1>
+            <!--
+          <input type="text" name="name" class="bd-grey-light" placeholder="Prenume"/>
+          <input type="text" name="surname" class="bd-grey-light" placeholder="Nume"/>
+          
+          <input type="email" name="email"  class="bd-grey-light" placeholder="Email"/>
+          <input type="text" name="affection" class="bd-grey-light" placeholder="Sufar de"/><br><br><br>
+          <textarea name="message" placeholder="Mesaj" rows="10" style="border:1px solid whitesmoke;"></textarea><br><br><br>
+          <br>
+          <a class="slim-button float-left">Trimite</a>-->
+          <%= render file: 'messages/new', locals: {tip: 'medic'} %>
+        </div>
+        
+       
+        
+    </div>
+  </div>
+
 <div class="modal" id="modal_login" style="background: rgba(0, 0, 0, 0.95);"><!--render de sign in-->
     <div class="longcontent tc-grey-light" style="background-color: transparent;">
         <div id="modal_login_close" class="float-right slim-button small tc-grey-light" onClick="hide_modal('modal_login');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
@@ -289,26 +321,47 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
         
     </div>
   </div>
-  
-     <div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin" style="display: inline-block !important; height: 10% !important;">
-     <%= image_tag ("icons/1492628996_menu.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; position: relative; padding: 0; float: left;", onclick: "show_modal('modal_menu')"%>
-
-      <!--<img src="<%=request.base_url %>/assets/icons/1492629013_mail.png" class="translucent link-focus" style="height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" >-->
-
-
-      <%= image_tag ("icons/1492629028_cart.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; position: relative; padding: 0; float: right; margin-right: 20px;", onclick: "show_modal('modal_menu')"%>
+  		<div id="menu_desktop" class="bg-grey-light shadow-bottom-nomargin">
+    <%= image_tag ("icons/1492628996_menu.png"), class: "translucent link-focus", style: "height: 40px; margin:5px; position: relative; padding: 0; float: left;", onclick: "show_modal('modal_menu')" %>
       
+      
+     <% if user_signed_in? %>
+            <img src="http://89.35.238.250/assets/icons/1492812098_avatar_signed.png" class="translucent link-focus" style="height: 40px; margin:5px; position: relative; padding: 0; float: right;" onclick="show_modal('modal_edit')"/>
+            
+              
+              <%else%>
+
+              <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent link-focus", style: "height: 40px; margin:5px; position: relative; padding: 0; float: right;", onclick: "show_modal('modal_login')" %>
+            
+      <% end %>
+       
+
+      
+      
+    
+    </div>
+  	<div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin">
+    <%= image_tag ("icons/1492628996_menu.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; position: relative; padding: 0; float: left;", onclick: "show_modal('modal_menu')" %>
       <% if user_signed_in? %>
-            <a>
-            <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;", onclick: "show_modal('modal_edit')" %>
-              <span style="color:green; font-size:0.8em; margin-top: 2%; float: right;">on-line</span>
-              </a>
+            <img src="http://89.35.238.250/assets/icons/1492812098_avatar_signed.png" class="translucent link-focus" style="height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;" onclick="show_modal('modal_edit')"/>
+            
+              
               <%else%>
 
               <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;", onclick: "show_modal('modal_login')" %>
             
       <% end %>
+      <a href="mailto:comenzi@curcumin95.ro"><%= image_tag ("icons//1492629013_mail.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;"%></a>
+
+      <a href="tel:+40 725 013 399"><%= image_tag ("icons/Phone-50.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" %></a>
+      
+     
+
+      
+      
+    
     </div>
+    
     
   <div id="section_ten" class="section_full tc-blue shadow-bottom" style="background-color: whitesmoke;">
      <!-- <div id="menu_desktop" class="shadow-bottom"  style="background-color: whitesmoke; display: none !important;">
@@ -335,17 +388,17 @@ Capsula (din hidroxipropilmeticeluloza) – 99,00mg <br>
             </a>
             <% end %>
       </div>-->
-    <div class="container-responsive align-left" id="scroll_comanda" style="margin-top:10%;">
-        <div class="container-half-b max8000">
+    <div class="container-responsive align-left" id="scroll_comanda" style="margin-top:10vh; margin-bottom:3vh;">
+        <div class="container-half-b max8000" style=" float:left; clear:left;">
           <h2 class="capital nomargin huge">Extract</h2>
           <h1 class="capital huge">Curcumin95 &amp; Bioperine</h1>
           
         </div>
       </div>
-        <div id="section_comanda" class="container-responsive align-left" style="display: table; position: relative;">
+        <div id="section_comanda" class="container-responsive align-left" style="display: table; position: relative; margin-top:2vh;">
             
         <% Product.all.order('id ASC').each do |produs| %>
-          <div class="container-half-b max800 float-left shadow-bottom"  style="padding-bottom: 10px; clear: both;">
+          <div class="container-half-b max800 float-left shadow-bottom"  style="padding-bottom: 10px; clear: both;  float:left; clear:left;">
               <div style="width:50%; max-width: 400px; position: relative; float: left; clear: both;" class="align-left nomargin nopadding">
                 <span class="slim-contour" style="margin-right:5px; border: 1px solid whitesmoke;">
                   <%= produs.nume%>
@@ -468,7 +521,7 @@ document.getElementById("order_order_products_attributes_<%=produs.id - 1%>_numa
 </script>
       <% end %>
           
-        <div class="container-half-b max800 float-left" style="padding-bottom: 10px;">
+        <div class="container-half-b max800 float-left" style="padding-bottom: 10px; float:left; clear:left;">
               <div style="width:50%; max-width: 400px; position: relative; float: left;" class="align-left nomargin nopadding">
                 <span class="slim-contour" style="margin-right:5px; border: 1px solid whitesmoke;">
                    
@@ -480,12 +533,15 @@ document.getElementById("order_order_products_attributes_<%=produs.id - 1%>_numa
                 Transport: <span id="transport">15</span> lei
                 <p id='total' class="tc-blue medium lei" style="display: none;">0</p>
                 </span>
+                <small class="thin small" style="position: relative; clear: both; float: left;">*Transport gratuit pentru comenzi de peste 200 lei</small>
+                
+                
           </div>
       </div>
           
-            <small class="thin small" style="position: relative; clear: both; float: left;">*Transport gratuit pentru comenzi de peste 200 lei</small>
+            
 <% if user_signed_in? %>
-<div class="container-half-b max1000 float-left tc-blue" style="margin-top: 50px;">
+<div class="container-half-b max1000 float-left tc-blue" style="margin-top: 50px; float:left; clear:left;">
             <div style="width:45%; max-width: 400px; min-width: 200px; position: relative; float: left; padding-right: 3%; margin-bottom: 5%;">
             <div class="square bd-grey tc-grey">
               <div class="content">
@@ -506,9 +562,9 @@ document.getElementById("order_order_products_attributes_<%=produs.id - 1%>_numa
             </div>
           </div>
 <%else%>
-          <div class="container-half-b max1000 float-left tc-blue" style="margin-top: 50px;">
+          <div class="container-half-b max1000 float-left tc-blue" style="margin-top: 50px; float:left; clear:left;">
             <div style="width:45%; max-width: 400px; min-width: 200px; position: relative; float: left; padding-right: 3%; margin-bottom: 5%;">
-            <div onclick="show_modal('modal_login')" class="square bd-blue tc-blue" style="cursor: pointer;">
+            <div onclick="show_modal('modal_login'); show_newcont();" class="square bd-blue tc-blue" style="cursor: pointer;">
               <div class="content">
                 <div><span>
                 <h2 class="tc-blue align-center nomargin">Fa-mi</h2>
@@ -551,18 +607,8 @@ document.getElementById("order_order_products_attributes_<%=produs.id - 1%>_numa
             </div>
           </div>
           <%end%>
-          <a class="slim-button tc-blue nobackground normal slim" type="button" id="modal1_open" onClick="show_modal('modal6')" style="position: relative; float: left; clear: both;">Observatii si Contraindicatii</a>
-          <!--
-            image_tag sau dai enable static_assets
-
-
-          <a class="slim-button tc-blue nobackground normal slim" type="button" id="modal1_open" onClick="show_modal('modal7')" style="position: relative; float: center; clear: both;">Parerile clientilor</a>
-            <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;"> 
-          <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">
-          <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">
-          <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">
-          <img src="<%=request.base_url %>/assets/star.png" class="float-right"  style="height: 50px; width: 50px;">  -->
-          </div>
+          <a class="slim-button tc-blue nobackground normal slim" type="button" id="modal1_open" onClick="show_modal('modal6')" style="position: relative; float: left; clear: both;">Observatii si Contraindicatii</a><br>
+         
          
           <figure id="flacon_comanda" class="responsive-background">
               
@@ -597,7 +643,7 @@ document.getElementById("order_order_products_attributes_<%=produs.id - 1%>_numa
     </div>
   </div>
 
-  <div id='checkoutdisplay' class="section-large shadow-top align-center" style="display: none !important;" >
+  <div id='checkoutdisplay' class="section-large shadow-top align-center" style="display: none" >
    <div class="container-responsive align-center tc-blue" >
      <h2>Detalii de livrare si facturare</h2>
      <div class="container-half-b max600">
@@ -794,7 +840,7 @@ document.getElementById("comanda").type = "button";
 </body>
 </html>
 
-<%if notice == 'Multumim!' || notice == 'Verifica datele introduse!' || notice == 'Multumim!medic' || notice == 'Verifica datele introduse!medic' || notice == 'Date invalide!' || notice =='Date invalide!control' || notice == "Bine ai venit! Ai fost autentificat cu succes!" || notice == "Ti-ai actualizat contul cu succes!" || notice == "Ai ieșit din cont cu succes!" || notice == "Instructiunile au fost trimise pe e-mail!"%>
+<%if notice == 'Multumim!' || notice == 'Verifica datele introduse!' || notice == 'Multumim!medic' || notice == 'Verifica datele introduse!medic' || notice == 'Date invalide!' || notice =='Date invalide!control' || notice == "Bine ai venit! Ai fost autentificat cu succes!" || notice == "Ti-ai actualizat contul cu succes!" || notice == "Ai ieșit din cont cu succes!" || notice == "Instructiunile au fost trimise pe e-mail!" || notice == "La revedere! Contul tau a fost anulat cu succes."%>
 <script type="text/javascript">
 
 <% if notice == 'Multumim!medic' || notice == 'Verifica datele introduse!medic' %>

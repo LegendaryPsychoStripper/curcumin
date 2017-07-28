@@ -1,10 +1,34 @@
+<head>
+
+<%= stylesheet_link_tag    'global', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'square', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'queries_iphone', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'queries_samsung', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'queries_tablet', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'cssmodal', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'desktopcss', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'super', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'mihai', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+<%= javascript_include_tag 'modalJss', 'data-turbolinks-track': 'reload' %>
+
+
+
+
+</head>
+
 <title>Multumim!</title>
 
 <%= render file: 'layouts/header'%>
 
-<div class="align-center big" style="margin-top: 200px; margin-bottom: 100px;">
-<p>Îţi mulţumim pentru comanda ta!</p>
- <p>Vei fi contactat în cel mai scurt timp pentru confirmarea comenzii.</p>
+<div class="align-center tc-blue big" style="margin-top: 200px; margin-bottom: 100px;">
+<h2 class="huge slim">Îți mulțumim!</h2>
+ <p style="max-width:600px; display:inline-block; margin-left:auto; margin-right:auto; left:0; right:0; position:relative;">Comanda ta a fost înregistrată.<br>
+Vei fi contactat în cel mai scurt timp <br>pentru confirmarea comenzii.<br>
+ <a class="link-focus-blue" style="height: 35px; margin:5px; margin-right: 20px; display:inline-block; font-size:16px; line-height:25px; padding-left:50px; padding-right:50px; margin-top:12px;" href="<%=request.base_url%>" >
+              Află beneficiile
+            </a></p>
 </div>
 
 <%= render file: 'layouts/footer'%>

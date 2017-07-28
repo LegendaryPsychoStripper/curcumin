@@ -1,5 +1,23 @@
-<%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
-<div style="background: rgba(0, 0, 0, 0.95);">
+<head>
+
+<link href="assets/global.css" rel="stylesheet" type="text/css">
+<link href="assets/queries_iphone.css" rel="stylesheet" type="text/css">
+<link href="assets/queries_samsung.css" rel="stylesheet" type="text/css">
+<link href="assets/queries_tablet.css" rel="stylesheet" type="text/css">
+<link href="assets/cssmodal.css" rel="stylesheet" type="text/css">
+<link href="assets/desktopcss.css" rel="stylesheet" type="text/css">
+
+<link href="assets/super.css" rel="stylesheet" type="text/css">
+<link href="assets/mihai.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+</head>
+
+<title>Schimbare parola</title>
+
 <h2>Schimbă parola</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -12,7 +30,7 @@
     <!--<% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> caractere minimum)</em>
     <% end %>-->
-    <p style="color:white;">(6 caractere minim)</p>
+    
   </div>
 
   <div class="field">
@@ -22,5 +40,5 @@
   <div class="actions">
     <%= f.submit "Schimbă parola", class: 'submit-button' %>
   </div>
-  </div>
+
 <% end %>

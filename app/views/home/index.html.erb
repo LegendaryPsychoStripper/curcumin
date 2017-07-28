@@ -3,27 +3,27 @@
 <head>
 <meta charset="utf-8">
 <title>Curcumin Home</title>
-
-
-
-<%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'square', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-<%= stylesheet_link_tag 'queries_iphone', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'queries_samsung', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'queries_tablet', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'carousel', 'data-turbolinks-track': 'reload' %>
+
+<%= stylesheet_link_tag    'global', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'square', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'queries_iphone', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'queries_samsung', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'queries_tablet', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <%= javascript_include_tag 'modalJss', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'cssmodal', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'desktopcss', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<%= stylesheet_link_tag 'super', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag 'mihai', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'cssmodal', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'desktopcss', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'super', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'mihai', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;subset=latin-ext" rel="stylesheet">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -33,7 +33,8 @@
 
 </head>
 
-<body>
+
+<body style="" onload="js_Load()">
 <div id="fb-root"></div>
 <!--<% flash.each do |name, msg| %>
     <%= content_tag :div, msg %>
@@ -45,7 +46,7 @@
       <% if notice == 'Multumim!' || notice == 'Multumim!medic'%>
         Mesajul a fost transmis cu success!
        
-       <%elsif notice == 'Verifica datele introduse!medic'%>
+       <%elsif notice == 'Verifica datele introduse!medic' || notice =='Verifica datele introduse!'%>
        Verifica datele introduse!
        
        <%elsif notice == 'Date invalide!' || notice == 'Date invalide!control'%>
@@ -82,7 +83,7 @@
         
         <div id="modal1_close" class="float-right slim-button small tc-black-light" onClick="hide_modal('modal1');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         <br><br>
-        <h1 class= "align-left tc-blue biggest">Curcumin si bolile cardiovasculare</h1>
+        <h1 class= "tc-blue align-left huge">Curcumin si bolile cardiovasculare</h1><br>
         <p class="align-left medium">
 
 Termenul „boli cardiovasculare” este destinat unui număr cuprinzător de boli care afectează direct sau indirect sănătatea inimii. Acestea au ajuns să reprezinte principala cauză de mortalitate din toată lumea, chiar dacă realitatea este că majoritatea afecțiunilor pot fi prevenite.
@@ -152,7 +153,7 @@ Pacienților le-a fost administrat curcumin zilnic, începând cu 3 zile înaint
         
         
         <br><br>
-        <h1 class= "align-left tc-blue biggest">Curcumin si bolile neurodegenerative</h1>
+        <h1 class= "tc-blue align-left huge">Curcumin si bolile neurodegenerative</h1><br>
         <p class="align-left medium">
 
 
@@ -230,7 +231,7 @@ Proprietățile anti-inflamatorii, antiapoplectice și antioxidante protejează 
         
 
 <br><br>
-<h1 class= "align-left tc-blue biggest">Curcumin și artrita</h1>
+<h1 class= "tc-blue align-left huge">Curcumin și artrita</h1><br>
         <p class="align-left medium">
 
 Afecţiunile reumatice şi musculo-scheletice sunt cele mai frecvente boli cronice din toată lumea. 30% din populaţia adultă a Europei suferă de boli reumatice, în timp ce 50 din populaţia mondială suportă dureri de muşchi şi de oase. Afecțiunea numită generic artrită este atât de răspândită încât are și o zi marcată în calendarul internațional: 12 octombrie - Ziua Mondială a Luptei împotriva Artritelor.
@@ -281,7 +282,7 @@ Din 1980 de când s-a realizat primul studiu clinic, se cunoaște faptul că ext
         
 
 <br><br>
-<h1 class= "align-left tc-blue biggest">Curcumin și ficatul</h1>
+<h1 class= "tc-blue align-left huge">Curcumin și ficatul</h1><br>
         <p class="align-left medium">
 De la primele lecții de anatomie la școală ficatul este prezentat drept unul dintre cele mai importante organe din corpul uman. Are peste 500 de funcții pe care stilul de viață contemporan și, mai ales, modul de alimentație, le îngreunează extrem. Nu este de mirare atunci că afecțiunile hepatobiliare se numără printre cele mai des întâlnite și pe un eșantion tot mai cuprinzător de pacienți. 
 </p><p class="align-left medium">
@@ -354,7 +355,7 @@ Curcumin inhibă intrarea virusului hepatitei C în celulele umane. Împiedică 
          <div id="modal1_close" class="float-right slim-button small tc-blue-light" onClick="hide_modal('modal5');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         
 <br><br>
-<h1 class= "align-left tc-blue biggest">Curcumin: antiinflamator și antioxidant natural</h1>
+<h1 class= "tc-blue align-left huge">Curcumin: antiinflamator și antioxidant natural</h1><br>
         <p class="align-left medium">
 
 Imaginează-ți că soluția pentru prevenirea bolilor este atât de aproape de tine, încât trebuie doar să întinzi mâna până la raftul din bucătărie. Nu este produsul imaginației cuiva, ci al cercetărilor medicale de ani buni. Oamenii de știință iau în calcul condimente drept potențiale terapii împotriva unor boli precum cancerul”, spunea doctorul John C. Martin, în 2001. 
@@ -412,7 +413,7 @@ Curcumin s-a dovedit a fi una dintre marile descoperiri științifice ale secolu
         
         <div id="modal1_close" class="float-right slim-button small tc-black-light" onClick="hide_modal('modal6');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         <br><br>
-        <h1 class= "align-left tc-blue biggest">Curcumin în alergii și astm</h1>
+        <h1 class= "tc-blue align-left huge">Curcumin în alergii și astm</h1><br>
         <p class="align-left medium">
 
 În ultimii ani a existat o creștere globală incidenței de alergii și astm bronsic, în special în țările dezvoltate. Încercările de dezvoltare a unor măsuri eficiente de control au dus la explorarea unor medicamente alternative, inclusiv a unor remedii pe bază de plante, folosite în mod tradițional de civilizațiile vechi. 
@@ -507,7 +508,7 @@ Cercetătorii sugerează că aceste plante anti-astmatice pot reduce infecțiile
         
         
         <br><br>
-        <h1 class= "align-left tc-blue biggest">Curcumin și cancer</h1>
+        <h1 class= "tc-blue align-left huge">Curcumin și cancerul</h1><br>
         <p class="align-left medium">
 
 
@@ -586,7 +587,7 @@ Curcumin este identificat ca un agent epigenetic, iar aplicarea acestei propriet
         
 
 <br><br>
-<h1 class= "align-left tc-blue biggest">Curcumin și diabetul</h1>
+<h1 class= "tc-blue align-left huge">Curcumin și diabetul</h1><br>
         <p class="align-left medium">
 
 Încet, dar sigur, tot mai mulți oameni află că diabetul este una dintre bolilele atât prevenibile, cât și reversibile. Cu toate acestea, statisticile rămân îngrijorătoare: Federația Asociațiilor Diabeticilor din România anunță o prevalență reală a diabetului de peste 11% (la populația aflată între 20 și 79 de ani). 
@@ -662,7 +663,7 @@ Beneficiul imunomodulator al curcuminului în diabetul de tip 1, cunoscut și su
         
 
 <br><br>
-<h1 class= "align-left tc-blue biggest">Curcumin și Helicobacter Pylori</h1>
+<h1 class= "tc-blue align-left huge">Curcumin și Helicobacter Pylori</h1><br>
         <p class="align-left medium">
 Gastrită, ulcer și limfom gastric sunt doar câteva dintre numele afecțiunilor de care unul din doi oameni au auzit și, mai mult, care cunosc simptomele îndeaproape. Potrivit Organizației Mondiale a Sănătății, peste 50% din populația lumii este afectată de una dintre aceste boli. Iar pentru toate acestea și încă multe altele, există un virus responsabil: Helicobacter Pylori.
 </p><p class="align-left medium">
@@ -727,7 +728,7 @@ Efectele proprietăților anti-microbiene ale curcuminului acționează asupra d
          <div id="modal1_close" class="float-right slim-button small tc-blue-light" onClick="hide_modal('modal10');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         
 <br><br>
-<h1 class= "align-left tc-blue biggest">Curcumin și detoxifierea</h1>
+<h1 class= "tc-blue align-left huge">Curcumin și detoxifierea</h1><br>
         <p class="align-left medium">
 
 Zilele acestea ne supunem corpul la numeroase surse de toxicitate, atât fizice și organice, cât și mentale. Simptomele zilnice, unele peste care trecem ușor, altele care au ajuns parte din obiceiurile noastre, sunt modalitatea organismului de a transmite că are nevoie să încetinească un pic.
@@ -814,7 +815,7 @@ Curcumin stimulează a doua parte a procesului de detoxifiere, folosindu-și put
         
         <div id="modal1_close" class="float-right slim-button small tc-black-light" onClick="hide_modal('modal11');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         <br><br>
-        <h1 class= "align-left tc-blue biggest">Curcumin după intervenții chirurgicale</h1>
+        <h1 class= "tc-blue align-left huge">Curcumin după intervenții chirurgicale</h1><br>
         <p class="align-left medium">
 
 Recuperarea postoperatorie sau post-chirurgicală este faza de vindecare extrem de importantă și cuprinde 3 etape: 
@@ -902,7 +903,7 @@ Oboseala postoperatorie durează o lună, în general, la aproximativ 33% dintre
         
         
         <br><br>
-        <h1 class= "align-left tc-blue biggest">Antidepresiv</h1>
+        <h1 class= "tc-blue align-left huge">Antidepresiv</h1><br>
         <p class="align-left medium">
 
 
@@ -984,7 +985,7 @@ Acțiunea curcuminului protejează de astfel de daune prin îndepărtarea specii
         
 
 <br><br>
-<h1 class= "align-left tc-blue biggest">Curcumin și psoriazis</h1>
+<h1 class= "tc-blue align-left huge">Curcumin și psoriazis</h1><br>
         <p class="align-left medium">
 
 Ca orice boală autoimună, psoriazisul nu are un set de cauze exact, așa cum nu are nici un tratament demonstrat eficient pentru toate cazurile. Motiv pentru care abordarea holistică a bolii pare să fie cea mai potrivită și cea mai eficientă, ținând cont de mărturiile pacienților din toată lumea. 
@@ -1074,7 +1075,7 @@ Substanța naturală manipulează diferite căi biochimice și proteine ​​im
         
 
 <br><br>
-<h1 class= "align-left tc-blue biggest">Curcumin și sportul</h1>
+<h1 class= "tc-blue align-left huge">Curcumin și sportul</h1><br>
         <p class="align-left medium">
 Când vine vorba de sport și antrenamente, recuperarea este cuvântul-cheie. Refacerea rapidă și o rutină bună în acest sens reprezintă cheia pentru succesul pe termen lung al unui sportiv. Înțelegerea acestei componente critice din rutina sportului este extrem de importantă.
 </p><p class="align-left medium">
@@ -1137,7 +1138,7 @@ Curcumin atenuează efectele stresului prin blocarea acestor scăderi induse de 
          <div id="modal1_close" class="float-right slim-button small tc-blue-light" onClick="hide_modal('modal15');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         
 <br><br>
-<h1 class= "align-left tc-blue biggest">Curcumin pentru fumatori</h1>
+<h1 class= "tc-blue align-left huge">Curcumin pentru fumatori</h1><br>
         <p class="align-left medium">
 
 Proprietățile sale curative recomandă curcuminul ca partener de seamă în abordarea holistică a sănătății individuale, care începe cu prevenirea bolilor. O astfel de abordare este destinată tuturor, dar efectele sale benefice se remarcă mai ales în cazul celor care întrețin dependențe cu substanțe toxice, precum fumătorii (ocazionali sau înrăiți). 
@@ -1219,7 +1220,7 @@ Alt studiu important a analizat beneficiile pe termen lung ale curcuminului în 
        <div id="modal1_close" class="float-right slim-button small tc-black-light" onClick="hide_modal('modalproprietati');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
         
 <br><br>
-<h1 class= "align-left tc-blue biggest">Peste 100 de actiuni farmacologice</h1>
+<h1 class= "tc-blue align-left huge">Peste 100 de actiuni farmacologice</h1><br>
         <p class="align-left medium">
         
         
@@ -1248,7 +1249,7 @@ Alt studiu important a analizat beneficiile pe termen lung ale curcuminului în 
          <div id="modal1_close" class="float-right slim-button small tc-blue-light" onClick="hide_modal('modalstiinta');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
        
         <br><br>
-<h1 class= "align-left tc-blue biggest">"Cea mai importanta planta a lumii"</h1>
+<h1 class= "tc-blue align-left huge">"Cea mai importanta planta a lumii"</h1><br>
         <p class="align-left medium">
           
             
@@ -1273,7 +1274,7 @@ Curcuminul acționează similar cu recent descoperitele HUMIRA, REMICADE, ENBREL
          <div id="modal1_close" class="float-right slim-button small tc-blue-light" onClick="hide_modal('modalabsorbtie');" style="padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px;">X</div>
        
          <br>
-           <h1 class= "align-left tc-blue biggest">Curcumin+Bioperine</h1>  
+           <h1 class= "tc-blue align-left huge">Curcumin+Bioperine</h1>  <br>
            <br>  
        <p class="align-left medium">
        
@@ -1366,11 +1367,11 @@ Datorita rezultatelor sale deosebite, BIOPERINE este produsul cel mai des folosi
             <h1 class="align-left capital">CURCUMIN95</h1>
             
             <h2 class="capital align-left" style="clear:both">&amp; Bioperine</h2>
-            <a class="tc-grey-light link link-focus float-left thin" style="clear:both">Comanda</a><br><br><br>
-          <a class="tc-grey-light link float-left thin" style="clear:both">Stiinta</a><br><br><br>
-          <a class="tc-grey-light link float-left thin" style="clear:both">Beneficii</a><br><br><br>
-          <a class="tc-grey-light link float-left thin" style="clear:both">Intreaba medicul</a><br><br><br>
-          <a class="tc-grey-light link float-left thin" style="clear:both">Contact</a><br><br><br>
+            <a class="tc-grey-light link link-focus float-left thin" style="clear:both" href="orders/new">Comanda</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" onclick="hide_modal('modal_menu'); gotoid('section_three');">Stiinta</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" onclick="hide_modal('modal_menu'); gotoid('section_four');">Beneficii</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" onclick="hide_modal('modal_menu'); show_modal('modal_medic');">Intreaba medicul</a><br><br><br>
+          <a class="tc-grey-light link float-left thin" style="clear:both" onclick="hide_modal('modal_menu'); gotoid('contact_left');">Contact</a><br><br><br>
           
           
         </div>
@@ -1381,39 +1382,43 @@ Datorita rezultatelor sale deosebite, BIOPERINE este produsul cel mai des folosi
   </div>
 
 
+    
     <div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin">
     <%= image_tag ("icons/1492628996_menu.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; position: relative; padding: 0; float: left;", onclick: "show_modal('modal_menu')" %>
-      
-      
+      <% if user_signed_in? %>
+            <img src="http://89.35.238.250/assets/icons/1492812098_avatar_signed.png" class="translucent link-focus" style="height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;" onclick="show_modal('modal_edit')"/>
+            
+              
+              <%else%>
+
+              <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;", onclick: "show_modal('modal_login')" %>
+            
+      <% end %>
       <a href="mailto:comenzi@curcumin95.ro"><%= image_tag ("icons//1492629013_mail.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;"%></a>
-      <a class="float-right" href="orders/new">
+
+      <a href="tel:+40 725 013 399"><%= image_tag ("icons/Phone-50.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" %></a>
+
+       <a href="orders/new">
       <%= image_tag ("icons/1492629028_cart.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" %>
       </a>
       
-     <% if user_signed_in? %>
-            <a class="float-right">
-            <%= image_tag ("1492812098_avatar.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;", onclick: "show_modal('modal_edit')"%>
-              <p style="color:green; font-size:0.8em;">on-line</p></a>
-              <%else%>
-            <a class="float-right">
-            <%= image_tag ("1492812098_avatar.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; padding: 0; position: relative; float: right;margin-right: 20px;", onclick: "show_modal('modal_login')"%>
-            </a>
-      <% end %>
+
       
-      
-    <a href="tel:+40 725 013 399"><%= image_tag ("icons/Phone-50.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" %></a>
+    
     </div>
     
+
+
     <div id="section_one" class="section_full">
       <div class="padder-2-5"></div>
         <div id="menu_desktop">
-        <a class="tc-grey-light link float-left" onclick='gotoid("section_three")'>Stiinta</a>
+        <a class="tc-grey-light link float-left" onclick='gotoid("section_three");'>Stiinta</a>
         <div class="space"></div>
-      <a class="tc-grey-light link float-left" onclick='gotoid("section_four")'>Beneficii</a>
+      <a class="tc-grey-light link float-left" onclick='gotoid("section_four");'>Beneficii</a>
       <div class="space"></div>
-      <a class="tc-grey-light link float-left" onclick='gotoid("section_five")'>Alege Curcumin95</a>
+      <a class="tc-grey-light link float-left" onclick='gotoid("section_five");'>Alege Curcumin95</a>
       <div class="space"></div>
-      <a class="tc-grey-light link link-focus float-left" onclick='gotoid("section_seven")'>Comanda</a>
+      <a class="tc-grey-light link link-focus float-left" onclick='gotoid("section_seven");'>Comanda</a>
     <script>
     function gotoid(x)
     {
