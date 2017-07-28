@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:LegendaryPsychoStripper/curcumin.git'
 set :user, 'deployer'
 set :application, 'curcumin'
 set :rails_env, 'production'
-server '89.35.238.250', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
+server '207.154.242.89', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :pty, true
 
