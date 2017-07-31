@@ -26,6 +26,7 @@ gem 'netrc', '~> 0.11.0'
 gem 'http-accept', '~> 1.7'
 gem 'http-cookie', '~> 1.0', '>= 1.0.3'
 gem 'rest-client', '~> 1.8'
+gem 'httparty', '~> 0.15.6'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

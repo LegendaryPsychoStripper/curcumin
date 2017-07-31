@@ -1,36 +1,37 @@
 class ApplicationController < ActionController::Base	
   protect_from_forgery with: :exception
   #respond_to :html, :json
-	require 'rest-client'
+	#require 'rest-client'
 	require 'digest'
+  include HTTParty
 	#http_basic_authenticate_with :name => "user", :password => "password"
-	#before_action :require_authentication
-#def require_authentication
- # 	authenticate_or_request_with_http_basic do |u,p|
-  #  user = User.find_by(username: u)
-   # true if user && user.authenticate(p)
-  #end
+	#before_filter :http_basic_authenticate
+
+#def http_basic_authenticate
+#  authenticate_or_request_with_http_basic do |username, password|
+#    username == "1username" && password == "password1"
+#  end
 #end
   
-  def getsms
-  	begin
-  	RestClient.get "https://www.web2sms.ro/prepaid/message", {content_type: :json, accept: :json}
-  	puts 'da'
-  	rescue
-  	puts 'nu'
-  	end
-  end
+#  def getsms
+#  	begin
+  	#RestClient.get "https://www.web2sms.ro/prepaid/message", {content_type: :json, accept: :json}
+#  	puts 'da'
+#  	rescue
+#  	puts 'nu'
+#  	end
+#  end
 
 
-  def postsms#(mesaj,telefon)
+  def postsms(mesaj,telefon)
 
 	begin
   	#RestClient.post "https://www.web2sms.ro/prepaid/message", {content_type: :json, accept: :json}
   	apiKey = ENV["APP_ID"]
   	secret = ENV["APP_SECRET"]
   	nonce = Time.now.to_i.to_s
-  	recipient = '0720127645' #telefon
-  	message = 'TEST' #mesaj
+  	recipient = telefon
+  	message = mesaj
   	visibleMessage = "mesaj test"
   	url = "/prepaid/message"
   	metoda = 'POST'
@@ -44,10 +45,9 @@ class ApplicationController < ActionController::Base
   	#signature = ('sha512', string).to_hash
     signature =	Digest::SHA512.hexdigest string
 
-    authenticate_or_request_with_http_basic do |username,password|
-    	username = apiKey
-    	password = secret
-  	end
+#    authenticate_or_request_with_http_basic do |username,password|
+#    	username == apiKey &&	password == signature
+#  	end
   	
   	data = {
   		apiKey: apiKey,
@@ -62,10 +62,20 @@ class ApplicationController < ActionController::Base
   		nonce: nonce
   	}.to_json
   	
-  	puts data
+  	
+    
+
+auth = {:username => apiKey, :password => signature}
+@sms = HTTParty.post("https://www.web2sms.ro/prepaid/message", 
+                     :basic_auth => auth, :headers => {'Content-Type' => 'application/json'}, :body => data )
+
+
+puts @sms
+    #RestClient.post "https://#{apiKey}:#{signature}@www.web2sms.ro/prepaid/message", data, {content_type: :json, accept: :json}
   	#rescue
   	#puts 'nu'
-  	end
+  	
+    end
   
 
   end

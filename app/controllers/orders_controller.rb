@@ -104,6 +104,9 @@ class OrdersController < ApplicationController
   
    #if @order.save
      ApplicationMailer.notification_on_create(@order).deliver_now
+     
+     postsms("Va multumim pentru comanda efectuata. In scurt timp veti fi contactat pentru confirmare. IANA LIFE SRL www.curcumin95help.ro Tel: 0725013399", order_params[:telefon])
+     
      redirect_to multumim_path, notice: 'Comanda efectuata!'
    #end
    
