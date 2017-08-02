@@ -1223,12 +1223,19 @@ Alt studiu important a analizat beneficiile pe termen lung ale curcuminului în 
 <h1 class= "tc-blue align-left huge">Peste 100 de actiuni farmacologice</h1><br>
         <p class="align-left medium">
         
-        
-        Imaginează-ți că soluția pentru prevenirea bolilor este atât de aproape de tine, încât trebuie doar să întinzi mâna până la raftul din bucătărie. Nu este produsul imaginației cuiva, ci al cercetărilor medicale de ani buni. Oamenii de știință iau în calcul condimente drept potențiale terapii împotriva unor boli precum cancerul”, spunea doctorul John C. Martin, în 2001. 
-    </p><p class="align-left medium">
-       
-       
-        Imaginează-ți că soluția pentru prevenirea bolilor este atât de aproape de tine, încât trebuie doar să întinzi mâna până la raftul din bucătărie. Nu este produsul imaginației cuiva, ci al cercetărilor medicale de ani buni. Oamenii de știință iau în calcul condimente drept potențiale terapii împotriva unor boli precum cancerul”, spunea doctorul John C. Martin, în 2001.
+        Turmericul si extractul sau Curcumina, este cea mai studiata planta medicinala din istorie, în care s-a implicat vreodata stiinta moderna. 
+		</p> <p class="align-left medium">
+Cercetări extinse efectuate  în ultimii 30 de ani au demonstrat că Curcuminul joacă un rol important în prevenirea și tratarea diferitelor boli pro-inflamatorii cronice, inclusiv neurodegenerative, cardiovasculare, pulmonare, metabolice, boli autoimune si maligne 
+		</p>    <p class="align-left medium">
+Principalul extract al turmericului , Curcumin95 are in compozitia sa sute de constituenti printre care: </p> 
+ <ul class="align-left">
+<li>20 de molecule care joaca rol de antibiotice  </li>
+<li>14 care combat cancerul </li>
+<li>12 cu calitati antitumorale  </li>
+<li>12 antiinflamatorii  </li>
+<li>cel putin 10 antioxidanti diferiti </ul>
+		 <p class="align-left medium">
+Statisticile afirma ca 98% dintre boli sunt controlate de o molecula denumita NF-Kappa B, o proteina puternica care promoveaza raspunsul inflamator anormal in organism. Excesul de NF-Kappa B duce la imbolnavirea de cancer, artrita, si alte maladii serioase. Aceleasi studii arata ca curcuminul stopeaza actiunea negativa a NF-Kappa B, ceea ce inseamna ca, cu ajutorul sau, foarte multe boli din pricina carora sufera omul modern, pot fi prevenite.  
         
     </p>
     
@@ -1382,25 +1389,25 @@ Datorita rezultatelor sale deosebite, BIOPERINE este produsul cel mai des folosi
   </div>
 
 
-    
     <div id="menu_mobile" class="bg-grey-light shadow-bottom-nomargin">
     <%= image_tag ("icons/1492628996_menu.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; position: relative; padding: 0; float: left;", onclick: "show_modal('modal_menu')" %>
+     <a href="orders/new">
+      <%= image_tag ("icons/1492629028_cart.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" %>
+      </a>
       <% if user_signed_in? %>
-            <img src="http://89.35.238.250/assets/icons/1492812098_avatar_signed.png" class="translucent link-focus" style="height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;" onclick="show_modal('modal_edit')"/>
+            <img src="http://207.154.242.89/assets/icons/1492812098_avatar_signed.png" class="translucent" style="height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" onclick="show_modal('modal_edit')"/>
             
               
               <%else%>
 
-              <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent link-focus", style: "height: 85%; margin:5px; padding: 0; position: relative; float: right; margin-right: 20px;", onclick: "show_modal('modal_login')" %>
+              <%= image_tag ("icons/1492812098_avatar.png"), class: "translucent", style: "height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;", onclick: "show_modal('modal_login')" %>
             
       <% end %>
       <a href="mailto:comenzi@curcumin95.ro"><%= image_tag ("icons//1492629013_mail.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;"%></a>
 
       <a href="tel:+40 725 013 399"><%= image_tag ("icons/Phone-50.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; margin-right: 20px; position: relative; padding: 0; float: right;" %></a>
 
-       <a href="orders/new">
-      <%= image_tag ("icons/1492629028_cart.png"), class: "translucent link-focus", style: "height: 30px; margin:5px; position: relative; padding: 0; float: right;margin-right: 20px;" %>
-      </a>
+       
       
 
       
@@ -1416,7 +1423,7 @@ Datorita rezultatelor sale deosebite, BIOPERINE este produsul cel mai des folosi
         <div class="space"></div>
       <a class="tc-grey-light link float-left" onclick='gotoid("section_four");'>Beneficii</a>
       <div class="space"></div>
-      <a class="tc-grey-light link float-left" onclick='gotoid("section_five");'>Alege Curcumin95</a>
+      <a class="tc-grey-light link float-left" onclick='gotoid("section_six");'>Intreaba medicul</a>
       <div class="space"></div>
       <a class="tc-grey-light link link-focus float-left" onclick='gotoid("section_seven");'>Comanda</a>
     <script>
@@ -1433,8 +1440,8 @@ Datorita rezultatelor sale deosebite, BIOPERINE este produsul cel mai des folosi
             </a>
              <% if user_signed_in? %>
             <a class="float-right">
-            <%= image_tag ("icons/1492812098_avatar.png"), class: "icon translucent contained position-v-middle", onclick: "show_modal('modal_edit')"%>
-              <p style="color:white; font-size:0.8em;">on-line</p></a>
+            <%= image_tag ("icons/1492812098_avatar_signed.png"), class: "icon translucent contained position-v-middle", onclick: "show_modal('modal_edit')"%>
+              </a>
               <%else%>
             <a class="float-right">
             <%= image_tag ("icons/1492812098_avatar.png"), class: "icon translucent contained position-v-middle", onclick: "show_modal('modal_login')"%>
@@ -1540,7 +1547,7 @@ banii inapoi</p>
     <div id="section_three" class="section-auto">
       <div class="container-40-responsive tc-grey-light align-left" style=" margin-bottom: 0;">
           <p>&nbsp;</p>
-          <h1 class="align-left">Stiinta</h1>
+          <h1 class="align-left" style="margin-bottom:10px;">Stiinta</h1>
           <p class="thin">Structura sa de polifenol  a fost descoperită înca din 1910. De atunci, Curcuminul a demonstrat potentialul de a preveni si trata diferite afectiuni si boli cronice avand la baza inflamatia, procesele oxidative si modularea diverselor cai de semnalizare la nivel celular. Datorita efectelor sale terapeutice curcuminul a demonstrat ca protejeaza si stimuleaza regenerarea celulelor si tesuturilor organismului, putand inlocui multe din medicamentele actuale fara sa provoace reactii adverse. </p>
           <a class="slim-button tc-blue bd-blue" type="button" id="modal5_open" onClick="show_modal('modalstiinta')">Afla mai mult</a>
           
@@ -1549,13 +1556,13 @@ banii inapoi</p>
     <div class="container-responsive" style="margin-top: 0;">
           
           <div class="container-40-80-responsive tc-grey-light align-left">
-            <h1 class="align-left">Proprietati</h1>
+            <h1 class="align-left"  style="margin-bottom:10px;">Proprietati</h1>
             <p class="thin">Curcuminul reprezinta o sursa de beneficii care stau la baza functionarii optime a organismului uman. Pe langa puterea sa de a lupta cu radicalii liberi, de a reduce inflamatia, de detoxifiere si protejare a celulelor, Curcumin este un excelent imunostimulator cu rol antifungic, antiviral si antibacterian. Consumat in cure de trei luni sau mai mult, Curcuminul reuseste nu doar sa amelioreze simptomele ci si sa inlature cauzele care au dus la imbolnavirea organismului. </p>
 
           <a class="slim-button tc-blue bd-blue" type="button" id="modal4_open" onClick="show_modal('modalproprietati')">Afla mai mult</a>
           </div>
           <div class="container-40-80-responsive tc-grey-light align-left">
-            <h1 class="align-left">Formula unica</h1>
+            <h1 class="align-left" style="margin-bottom:10px;">Formula unica</h1>
             <p class="thin">Asa cum portocalele sunt o sursa de vitamina C, asa si Turmericul este o sursa de Curcumin. O radacina tipica de Turmeric contine doar 2-5% curcumin. In mod natural organismul uman are nevoie de cel putin 30-50 de grame de Curcumin pe zi pentru a avea efectele antioxidante si antiinflamatorii dorite.Curcumin95 impreuna cu BIOPERINE reprezinta combinatia unica, care asigura absorbtia  corp a dozei zilnice necesare, fiind de 30 de ori mai concentrat decat praful turmeric. </p>
 
           <a class="slim-button tc-blue bd-blue"  type="button" id="modal3_open" onClick="show_modal('modalabsorbtie')">Afla mai mult</a>
@@ -1576,7 +1583,7 @@ banii inapoi</p>
     </div>  
             
             
-        <h1 class="align-center tc-grey-light">Beneficii</h1>
+        <h1 class="align-center tc-grey-light">15 Beneficii</h1>
         <h2 class="align-center tc-grey-light">Curcumin95 &amp; Bioperine</h2>
         <div id="beneficii_1" style="position: relative; height: 100%; width: 100%;">
           <div class="square-full square-third translucent">
@@ -1717,8 +1724,8 @@ banii inapoi</p>
     <div id="section_five" class="section_full tc-blue ">
     <div class="container-responsive align-left">
         <div class="container-half max600">
-          <h1 class="capital">Detoxifiaza-ti</h1>
-          <h2 class="capital">Organismul !</h2>
+          <h1 class="capital" style="word-break: keep-all;">Detoxifiaza&#8209;ti</h1>
+          <h2 class="capital">Organismul!</h2>
           <p class="normal medium">Cand toxinele se acumuleaza mai repede decat pot fi eliminate, in tesuturi se initiaza procese degenerative.
 2-3 capsule de curcumin pe zi, vor canaliza energia corpului tau acolo unde ai nevoie de ea, detoxifiind organismul, intarind sistemul imunitar si contribuind la echilibrarea ta fizica si psihica.
 
@@ -1726,7 +1733,7 @@ banii inapoi</p>
 
 
           </p>
-          <p class="normal bold">Pentru a obtine efecte terapeutice Extract Curcumin95&Bioperine trebuie asociat cu o dieta sanatoasa si consumat in cure de cate 3 luni. 
+          <p class="normal bold">Pentru a obtine efecte terapeutice Extract Curcumin95&amp;Bioperine trebuie asociat cu o dieta sanatoasa si consumat in cure de cate 3 luni. 
           </p>
           <p class="normal medium">
             <a class="slim-button tc-blue bd-blue" href="/orders/new">Comanda</a>
@@ -1745,7 +1752,7 @@ banii inapoi</p>
           <p class="normal medium  max400">
           Curcuminul, unul dintre cei mai puternici anti-inflamatori din lume, conform cercetarilor, este recomandat in prevenirea si ameliorarea simptomelor unui numar foarte mare de boli cronice.                                                                 <p class="normal medium  max400">Afla mai multe despre cum suplimentul organic Curcumin95&amp;Bioperine poate ameliora simptomele afectiunii de care suferi, de la medicul tau online.
           <br><br>
-          <a class="slim-button tc-blue bd-blue" onClick="show_modal('modal_medic')">Intreaba</a>
+          <a class="slim-button tc-blue bd-blue" onClick="show_modal('modal_medic')">Intreabă medicul</a>
           </p>
           
         </div>
@@ -1828,17 +1835,17 @@ banii inapoi</p>
     
     <div id="section_eight" class="section_full tc-grey-light">
       <div class="container-responsive align-left">
-        <div class="container-half max600">
+        <div class="container-half max600" id="testimoniale">
           <div class="navigation">
             <div class="navigation-left" onClick="plusSlides(-1)"></div>
             <div class="navigation-right" onClick="plusSlides(1)"></div>
           </div>
-          <h1 id="title1" style="text-align: left; font-size: 2em; display: inline-block; float: left;">ANA, 24 de ani</h1>
-        <h1 id="title2" style="text-align: left; font-size: 2em; display: none; float: left;">Maria, 24 de ani</h1>
-        <h1 id="title3" style="text-align: left; font-size: 2em; display: none; float: left;">ION, 24 de ani</h1>
-        <p id="text1" style="text-align: left; font-weight: 300; display: inline-block;">Buna ziua, am 54 de ani si am fost diagnosticata cu cardiomiopatie ischemica, aritmie ventriculara, colita acuta. Zici ca toate bolile trag la mine. Folosesc Curcumin de 7 luni si fara el nu pot sa rezist. Am scapat de durerile abdominale, nu mai sangerez , inima imi bate regulat, colesterolul este in limite normale. Pot face efort fizic fara sa obosesc repede, asa cum se intampla de obicei. Ma bucur ca exista acest produs si il recomand cu incredere tuturor celor care sunt in situatia mea. </p>
+          <h1 id="title1" style="text-align: left; font-size: 2em; display: inline-block; float: left;">MARIANA, 54 de ani</h1>
+        <h1 id="title2" style="text-align: left; font-size: 2em; display: none; float: left;">ILEANA, 58 de ani</h1>
+        <h1 id="title3" style="text-align: left; font-size: 2em; display: none; float: left;">GABRIELA, 38 de ani</h1>
+        <p id="text1" style="text-align: left; font-weight: 300; display: inline-block;">Buna ziua, am 54 de ani si am fost diagnosticata cu cardiomiopatie ischemica, aritmie ventriculara, colita acuta. Folosesc Curcumin de 7 luni si fara el nu pot sa rezist. Am scapat de durerile abdominale, nu mai sangerez, inima imi bate regulat, colesterolul este in limite normale. Pot face efort fizic fara sa obosesc repede, asa cum se intampla de obicei. Ma bucur ca exista acest produs si il recomand cu incredere tuturor. </p>
            <p id="text2" style="text-align: left; font-weight: 300; display: none;">Durerea a debutat de la un deget. Pe parcurs intreaga mana iar durerea a aparut si la cealalta plus ca imi amorteau foarte tare. Sunt o persoana activa, am 58 de ani si prin mainile mele trec toate. Cand deschid dulapul cu medicamente ma sperii de fiecare data. Am atatea ca as putea da si la vecini. Am suferit atatia ani fiindca nu am stiut ce sa caut si unde sa caut. Mi-am pus toata speranta  atunci cand am cumparat primul flacon de Curcumin95&amp;Bioperine si va spun ca nu imi pare rau.</p>
-      <p id="text3" style="text-align: left; font-weight: 300; display: none;"> Colesterolul a fost mereu o problema mare pentru mine . Am gasit pe facebook  acest produs si am inceput sa iau cate 4 pastile zilnic. Au trecut 2 luni si am refacut analizele. Inainte aveam colesterolul aproape 300, iar acum mi-a scazut la 233. Am sa continui inca doua luni si revin cu vesti ! Merita luat, am uitat sa va spun ca aveam si dureri articulare, care acum au disparut de tot ! Recomand !</p>
+      <p id="text3" style="text-align: left; font-weight: 300; display: none;"> Colesterolul a fost mereu o problema mare pentru mine. Am gasit pe facebook  acest produs si am inceput sa iau cate 4 pastile zilnic. Au trecut 2 luni si am refacut analizele. Inainte aveam colesterolul aproape 300, iar acum mi-a scazut la 233. Am sa continui inca doua luni si revin cu vesti! Merita luat, am uitat sa va spun ca aveam si dureri articulare, care acum au disparut de tot! Recomand!</p>
 
         </div>
       </div>

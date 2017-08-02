@@ -7,35 +7,35 @@ class OrdersController < ApplicationController
   def multumim
   
   end
-	
+  
   def new
-		@order=Order.new
-		
+    @order=Order.new
+    
     @products= Product.all
 
     @order.order_products.build
-	end
-	
-	def show
+  end
+  
+  def show
     if user_signed_in? && @order.user_id == current_user.id || current_user.tip =="admin"
       
       @order
     else
       redirect_to root_path
     end
-		
-	end
+    
+  end
 
-	def edit
+  def edit
     if user_signed_in? && current_user.tip == nil || !user_signed_in?
       redirect_to root_path
     end
-		@order
+    @order
     @order_products=OrderProduct.where(order_id: @order.id )
-		@products= Product.all
-	end
+    @products= Product.all
+  end
 
-	def index
+  def index
     
     if user_signed_in? && current_user.tip == nil
       redirect_to root_path
@@ -54,9 +54,9 @@ class OrdersController < ApplicationController
 
    
 
-	end
+  end
 
-	def create
+  def create
     if order_params[:email] != nil && order_params[:telefon]!= nil
 
     if params[:save_details] == '1'
@@ -65,7 +65,7 @@ class OrdersController < ApplicationController
     end
     transport = 'false'
     pret = 0
-  #verificare validari order (se fute stocul)
+ 
     order_params[:order_products_attributes].each do |key, value|
       @product=Product.find(value[:product_id])
       @product.stoc = @product.stoc.to_i - value[:numar].to_i
@@ -93,19 +93,20 @@ class OrdersController < ApplicationController
 
 
      @order = Order.create(order_params.except(:order_products_attributes).merge(pret: pret, transport: transport))
+     puts @order.id
      order_params[:order_products_attributes].each do |key, value|
         
       if value[:numar] == ''
         value[:numar] = '0'
       end
-         @order_product=OrderProduct.create(value.merge(order_id: @order.id))
+         @order_product=OrderProduct.create!(value.merge(order_id: @order.id))
       
      end
   
    #if @order.save
      ApplicationMailer.notification_on_create(@order).deliver_now
      
-     postsms("Va multumim pentru comanda efectuata. In scurt timp veti fi contactat pentru confirmare. IANA LIFE SRL www.curcumin95help.ro Tel: 0725013399", order_params[:telefon])
+     postsms("Va multumim pentru comanda efectuata, veti fi contactat pentru confirmare. IANA LIFE SRL Tel.0725.01.33.99 / www.curcumin95help.ro Program L-V: 9:00-17:00", order_params[:telefon])
      
      redirect_to multumim_path, notice: 'Comanda efectuata!'
    #end
@@ -133,7 +134,7 @@ class OrdersController < ApplicationController
         redirect_to :back, alert:'Stoc epuizat!' and return
       end   
     
-    else
+    elsif value[:numar].to_i > 0 
 
       @product=Product.find(value[:product_id])
       @product.stoc = @product.stoc.to_i + (@order_product.numar.to_i - value[:numar].to_i)
@@ -192,7 +193,7 @@ class OrdersController < ApplicationController
     end
     #respond_with @order.destroy
     
-	end
+  end
 
 private
 

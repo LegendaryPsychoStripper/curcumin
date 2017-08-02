@@ -25,3 +25,4 @@ namespace :deploy do
   before 'deploy:migrate', 'deploy:db:create'
   after 'puma:smart_restart', 'nginx:restart'
 end
+load "config/recipes/assets"

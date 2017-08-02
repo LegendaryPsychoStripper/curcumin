@@ -13,6 +13,7 @@ function currentSlide(n){
 function showSlides(n){
 	var i;
 	var slides = ["url('assets/pexels-photo-88636.jpg')", "url('assets/pexels-photo-219833.jpg')", "url('assets/pexels-photo.jpg')"];
+	
 	var titles = ["title1", "title2", "title3"];
 	var texts = ["text1", "text2", "text3"];
 	if(n > slides.length){
@@ -28,7 +29,7 @@ function showSlides(n){
 	document.getElementById(titles[slideIndex-1]).style.display = "inline-block";
 	document.getElementById(texts[slideIndex-1]).style.display = "inline-block";
 	document.getElementById("section_eight").style.backgroundImage = slides[slideIndex-1];
-	
+	document.getElementById("background-eight").style.backgroundImage = slides[slideIndex-1];
 }
 
 
